@@ -22,7 +22,7 @@ export class OrderSummaryComponent implements OnInit {
   }
 
   getOrderItems(): void {
-    this.orderItems = this.orderService.getItems();
+    this.orderItems = this.orderService.getOrderItems();
   }
 
   getTotalPrice(): void {

@@ -13,17 +13,12 @@ export class OrderService {
 
   constructor() {}
 
-  addItem(item: MenuItem): void {
+  addItemToOrder(item: MenuItem): void {
     this.items.push(item);
     this.totalPrice += item.price;
     this.itemCount++;
     this.orderSubject.next(this.items);
   }
-
-  getItems(): MenuItem[] {
-    return this.items;
-  }
-
   getOrderItems(): MenuItem[] {
     return this.items;
   }

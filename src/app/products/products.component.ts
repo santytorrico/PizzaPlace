@@ -21,7 +21,7 @@ export class ProductsComponent implements OnInit {
     this.menuService.getMenuItems().subscribe(menuItems => this.menuItems = menuItems);
   }
 
-  addToOrder(menuItem: MenuItem): void {
-    this.orderService.addItem(menuItem);
+  addToOrder(item: MenuItem): void {
+    this.orderService.addItem(item);
   }
 }

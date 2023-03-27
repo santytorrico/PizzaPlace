@@ -1,6 +1,27 @@
-<table>
-  <tr *ngFor="let item of items">
-    <td>{{item.name}}</td>
-    <td>{{item.price | currency}}</td>
-  </tr>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Order Summary</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of orderItems">
+            <td>{{ item.name }}</td>
+            <td>$ {{ item.price }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Total Price: $ {{ totalPrice }}</p>
+      <p>Number of Items: {{ itemCount }}</p>
+    </div>
+  </div>
+</div>

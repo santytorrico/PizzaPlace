@@ -1,19 +1,11 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <h1>Our Menu</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let item of menuItems">
-      <div class="card">
-        <img class="card-img-top" [src]="item.imagePath" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{ item.name }}</h5>
-          <p class="card-text">{{ item.description }}</p>
-          <p class="card-price">$ {{ item.price }}</p>
-          <button class="btn btn-primary" (click)="addToOrder(item)">Add to Order</button>
-        </div>
+<div class="menu-container">
+  <div class="menu-row">
+    <div class="menu-col" *ngFor="let menuItem of menuItems">
+      <div class="menu-item">
+        <img [src]="menuItem.imagePath" alt="Menu item image">
+        <h3>{{ menuItem.name }}</h3>
+        <p>{{ menuItem.description }}</p>
+        <p class="price">{{ menuItem.price | currency }}</p>
       </div>
     </div>
   </div>

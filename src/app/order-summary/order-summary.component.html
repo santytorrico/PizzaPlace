@@ -1,1 +1,6 @@
-<p>order-summary works!</p>
+<table>
+  <tr *ngFor="let item of items">
+    <td>{{item.name}}</td>
+    <td>{{item.price | currency}}</td>
+  </tr>
+</table>

@@ -7,19 +7,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
-import { TableComponent } from './table/table.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { getAnalytics } from "firebase/analytics";
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     OrderSummaryComponent,
-    TableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase())
   ],
   providers: [MenuService],
   bootstrap: [AppComponent]

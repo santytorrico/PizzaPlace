@@ -44,6 +44,27 @@
       margin-top: 5px;
       font-size: 18px;
       font-weight: bold;
+      
     }
   }
-  
+  .btn-primary {
+    background-color: #ffffff; /* Blue */
+    // border-color: #2F4858;
+    color: #000000;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    
+    &:hover {
+      background-color: #22223b; /* Darker blue */
+      border-color: #22223b;
+      color: #ffffff;
+      cursor: pointer;
+    }
+    
+    // &:focus {
+    //   box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5); /* Focus state */
+    // }
+  }

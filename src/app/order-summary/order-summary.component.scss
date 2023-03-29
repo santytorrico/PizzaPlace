@@ -1,0 +1,15 @@
+/* Add this to your order-summary.component.scss file */
+
+.order-summary-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F2E9E4;
+  }
+
+  
+  .order-summary-table {
+    margin-top: 20px;
+  }

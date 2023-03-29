@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { TableComponent } from './table/table.component';
+import { VisEnriqueComponent } from './vis-enrique/vis-enrique.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     OrderSummaryComponent,
-    TableComponent
+    TableComponent,
+    VisEnriqueComponent
   ],
   imports: [
     BrowserModule,

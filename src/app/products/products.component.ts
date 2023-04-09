@@ -8,18 +8,18 @@ import { Router } from '@angular/router';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent  {
   menuItems: MenuItem[] = [];
 
   constructor(private menuService: MenuService, private orderService: OrderService,private router: Router) {}
 
-  ngOnInit(): void {
-    this.getMenuItems();
-  }
+  // ngOnInit(): void {
+  //   this.getMenuItems();
+  // }
 
-  getMenuItems(): void {
-    this.menuService.getMenuItems().subscribe(menuItems => this.menuItems = menuItems);
-  }
+  // getMenuItems(): void {
+  //   this.menuService.getMenuItems().subscribe(menuItems => this.menuItems = menuItems);
+  // }
   addToOrder(item: MenuItem): void {
     this.orderService.addItemToOrder(item);
   }

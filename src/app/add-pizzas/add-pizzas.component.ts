@@ -12,7 +12,6 @@ export class AddPizzasComponent implements OnInit {
   form: FormGroup;
   constructor(private menuService:MenuService){
     this.form = new FormGroup({
-      id: new FormControl(),
       name: new FormControl(),
       description: new FormControl(),
       price: new FormControl(),

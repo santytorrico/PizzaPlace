@@ -13,6 +13,7 @@ export class MenuService {
     const  menuItemsRef =collection(this.firestore, 'menuItems');
     return addDoc(menuItemsRef, menuItem);
   }
+  
   getPizzas(): Observable<MenuItem[]>{
     const  menuItemRef =collection(this.firestore, 'menuItems');
     return collectionData(menuItemRef, {idField : 'id'}) as Observable<MenuItem[]>;

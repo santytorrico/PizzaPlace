@@ -12,7 +12,6 @@ export class PizzasListComponent implements OnInit{
   menuItems: MenuItem[];
   constructor(private menuService:MenuService){
     this.menuItems= [{
-      id: 1,
       name: 'simp',
       description: 'CLASSIC SAUCE, SPECIAL T SAUCE, FRESH MOZARELLA, SHREDDED MOZZARELLA, PARMESAN-ROMANO',
       price: 8.99,

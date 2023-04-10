@@ -20,8 +20,11 @@ export class PizzasListComponent implements OnInit{
     }]
   }
   ngOnInit(): void{
-    this.menuService.getPlace().subscribe(menuItems=>{
-      console.log(menuItems);
+    this.menuService.getPizzas().subscribe(menuItems=>{
+      this.menuItems =menuItems;
     })
+  }
+  async onClickDelete(menuItem:MenuItem){
+    const response= await this.menuService.deleteMenuItem(menuItem);
   }
 }

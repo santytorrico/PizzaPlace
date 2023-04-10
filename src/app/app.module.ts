@@ -13,7 +13,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import {provideFirestore,getFirestore} from '@angular/fire/firestore';
 import { AddPizzasComponent } from './add-pizzas/add-pizzas.component';
-import { PizzasListComponent } from './pizzas-list/pizzas-list.component'
+import { PizzasListComponent } from './pizzas-list/pizzas-list.component';
+import { AdminViewComponent } from './admin-view/admin-view.component'
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PizzasListComponent } from './pizzas-list/pizzas-list.component'
     OrderSummaryComponent,
     AddPizzasComponent,
     PizzasListComponent,
+    AdminViewComponent,
   ],
   imports: [
     BrowserModule,

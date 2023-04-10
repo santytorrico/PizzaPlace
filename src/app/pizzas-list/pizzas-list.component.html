@@ -4,7 +4,8 @@
         <div class="info">
             <h4>{{menuItem.name}}</h4>
             <p>{{menuItem.price}}</p>
-            <p>Descriptiom: {{menuItem.description}}</p>
+            <p>description: {{menuItem.description}}</p>
+            <button class="btn btn-outline-danger" (click)="onClickDelete(menuItem)">Delete</button>
         </div>
     </div>
 </div>

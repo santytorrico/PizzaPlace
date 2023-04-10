@@ -1,0 +1,38 @@
+.container {
+    margin-top: 20px;
+    background-color: #F2E9E4;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    color: #2F4858;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .table {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #2F4858;
+  
+    th {
+      border-bottom: 2px solid #2F4858;
+      font-weight: bold;
+    }
+  
+    td {
+      padding: 10px;
+    }
+  }
+  
+  p {
+    font-size: 18px;
+    color: #2F4858;
+    font-weight: bold;
+    margin: 0;
+  }
+  

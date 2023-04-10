@@ -13,6 +13,10 @@
   .menu-col {
     width: calc(33.33% - 10px);
     margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+
   }
   
   .menu-item {
@@ -33,10 +37,11 @@
     }
   
     p {
-        text-transform: uppercase;
-        color: #b7b7b7;
+        text-transform: lowercase;
+        color: #555555;
         margin: 0;
-        font-size: 16px;
+        font-size: 18px;
+        font-weight: bold;
     }
   
     .price {
@@ -46,4 +51,18 @@
       font-weight: bold;
     }
   }
+  .menu-item button {
+    background-color: #FF0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-item button:hover {
+    background-color: #CC0000;
+  }
+  
   

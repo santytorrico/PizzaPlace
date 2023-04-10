@@ -2,8 +2,8 @@
   <div class="menu-row">
     <div class="menu-col" *ngFor="let menuItem of menuItems">
       <div class="menu-item">
-        <img [src]="menuItem.imagePath" alt="Menu item image">
         <h3>{{ menuItem.name }}</h3>
+        <img [src]="menuItem.imagePath" alt="Menu item image">
         <p>{{ menuItem.description }}</p>
         <p class="price">{{ menuItem.price | currency }}</p>
         <button class="btn btn-primary" (click)="addToOrder(menuItem); navigateToOrderSummary()">Add To Cart</button>

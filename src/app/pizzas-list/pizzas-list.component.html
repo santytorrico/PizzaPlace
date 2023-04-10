@@ -1,11 +1,12 @@
-<div class="menuItems">
+<div class="menu-items-container">
     <div class="menu-item" *ngFor="let menuItem of menuItems">
-        <div class="image" [ngStyle]="{ backgroundImage: 'url('+menuItem.imagePath+')' }"></div>
-        <div class="info">
-            <h4>{{menuItem.name}}</h4>
-            <p>{{menuItem.price}}</p>
-            <p>description: {{menuItem.description}}</p>
-            <button class="btn btn-outline-danger" (click)="onClickDelete(menuItem)">Delete</button>
-        </div>
+      <div class="image" [ngStyle]="{ backgroundImage: 'url('+menuItem.imagePath+')' }"></div>
+      <div class="info">
+        <h4 class="name">{{menuItem.name}}</h4>
+        <p class="price">{{menuItem.price}}</p>
+        <p class="description">Description: {{menuItem.description}}</p>
+        <button class="btn btn-delete" (click)="onClickDelete(menuItem)">Delete</button>
+      </div>
     </div>
-</div>
+  </div>
+  

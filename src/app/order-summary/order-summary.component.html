@@ -20,8 +20,13 @@
           </tr>
         </tbody>
       </table>
-      <p>Total Price: $ {{ totalPrice }}</p>
-      <p>Number of Items: {{ itemCount }}</p>
+      <div class="row">
+        <div class="col-12">
+          <p>Total Price: $ {{ totalPrice }}</p>
+          <p>Number of Items: {{ itemCount }}</p>
+          <button class="back-button" (click)="navigateToProducts()">Add more Items</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

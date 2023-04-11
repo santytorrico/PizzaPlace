@@ -35,4 +35,16 @@
     font-weight: bold;
     margin: 0;
   }
+  .back-button {
+    margin-top: 20px;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
   
+  .back-button:hover {
+    background-color: #000;
+    color: #fff;
+  }

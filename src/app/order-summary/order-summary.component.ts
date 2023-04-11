@@ -16,9 +16,10 @@ export class OrderSummaryComponent implements OnInit {
 
   ngOnInit(): void {
     this.getOrderItems();
-    this.getTotalPrice();
     this.getItemCount();
     this.getOrderSubject();
+    this.getTotalPrice();
+    console.log(this.getTotalPrice())
   }
 
   getOrderItems(): void {
@@ -26,8 +27,14 @@ export class OrderSummaryComponent implements OnInit {
   }
 
   getTotalPrice(): void {
-    this.totalPrice = this.orderService.getTotalPrice();
+    let total = 0;
+    this.orderItems.forEach(item => {
+      total += Number(item.price);
+    });
+    this.totalPrice = total;
   }
+  
+
 
   getItemCount(): void {
     this.itemCount = this.orderService.getItemCount();
@@ -36,4 +43,5 @@ export class OrderSummaryComponent implements OnInit {
   getOrderSubject(): void {
     this.orderService.getOrderSubject().subscribe(items => this.orderItems = items);
   }
+  
 }

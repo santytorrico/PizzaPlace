@@ -23,6 +23,12 @@ export class OrderSummaryComponent implements OnInit {
     console.log(this.getTotalPrice())
   }
 
+  removeFromOrder(index: number): void{
+    this.orderItems.splice(index, 1);
+    this.getTotalPrice();
+    this.getItemCount();
+  }
+
   getOrderItems(): void {
     this.orderItems = this.orderService.getOrderItems();
   }

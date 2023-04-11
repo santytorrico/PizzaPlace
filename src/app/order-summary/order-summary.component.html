@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1>Order Summary</h1>
+      <h1>Your Cart</h1>
     </div>
   </div>
   <div class="row">
@@ -14,19 +14,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of orderItems">
+          <tr *ngFor="let item of orderItems; let i = index">
             <td>{{ item.name }}</td>
             <td>$ {{ item.price }}</td>
+            <td><button class="delete-button" (click)="removeFromOrder(i)">Remove</button></td>
           </tr>
         </tbody>
       </table>
-      <div class="row">
-        <div class="col-12">
-          <p>Total Price: $ {{ totalPrice }}</p>
-          <p>Number of Items: {{ itemCount }}</p>
-          <button class="back-button" (click)="navigateToProducts()">Add more Items</button>
-        </div>
-      </div>
+      <p>Total Price: $ {{ totalPrice }}</p>
+      <p>Number of Items: {{ itemCount }}</p>
+      <button class="back-button" (click)="navigateToProducts()">Add more Items</button>
     </div>
   </div>
 </div>

@@ -2,11 +2,14 @@
   <div class="menu-row">
     <div class="menu-col" *ngFor="let menuItem of menuItems">
       <div class="menu-item">
-        <h3>{{ menuItem.name }}</h3>
         <img [src]="menuItem.imagePath" alt="Menu item image">
-        <p>{{ menuItem.description }}</p>
-        <p class="price">{{ menuItem.price | currency }}</p>
-        <button class="btn btn-primary" (click)="addToOrder(menuItem); navigateToOrderSummary()">Add To Cart</button>
+        <div class="menu-item-details">
+          <h3 class="menu-item-name">{{ menuItem.name }}</h3>
+          <p class="menu-item-price">${{ menuItem.price }}</p>
+          <button class="menu-item-btn" (click)="addToOrder(menuItem); navigateToOrderSummary()">
+            <i class="fa-sharp fa-regular fa-cart-plus"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>

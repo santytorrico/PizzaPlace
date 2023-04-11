@@ -48,6 +48,25 @@
     background-color: #000;
     color: #fff;
   }
+  .back-arrow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #2F4858;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .back-arrow:hover {
+    color: #000;
+  }
+  
+  .back-arrow i {
+    margin-right: 5px;
+  }
+  
+  
   .delete-button {
   background-color: #fff;
   border: 1px solid #000;

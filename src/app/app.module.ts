@@ -14,7 +14,9 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import {provideFirestore,getFirestore} from '@angular/fire/firestore';
 import { AddPizzasComponent } from './add-pizzas/add-pizzas.component';
 import { PizzasListComponent } from './pizzas-list/pizzas-list.component';
-import { AdminViewComponent } from './admin-view/admin-view.component'
+import { AdminViewComponent } from './admin-view/admin-view.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component'
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { AdminViewComponent } from './admin-view/admin-view.component'
     AddPizzasComponent,
     PizzasListComponent,
     AdminViewComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

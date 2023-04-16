@@ -25,4 +25,5 @@ export class ProductsComponent implements OnInit  {
   navigateToOrderSummary(): void {
     this.router.navigate(['/OrderSummary']);
   }
+  
 }

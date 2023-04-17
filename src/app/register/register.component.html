@@ -1,11 +1,31 @@
-<form [formGroup]="formReg" (ngSubmit)="onSubmit()" class="register-form">
-    <div class="form-group">
-        <label class="form-label">Email</label>
-        <input type="text" class="form-control" formControlName="email">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register - My Page</title>
+    <link rel="stylesheet" href="register.component.scss" />
+  </head>
+  <body>
+    <div class="container">
+      <form
+        [formGroup]="formReg"
+        (ngSubmit)="onSubmit()"
+        class="register-form my-custom-style"
+      >
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="text" class="form-control" formControlName="email" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            formControlName="password"
+          />
+        </div>
+        <input type="submit" value="Create Account" />
+      </form>
     </div>
-    <div class="form-group">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-control" formControlName="password">
-    </div>
-    <input type="submit" value="CreateAccount">
-</form>
+  </body>
+</html>

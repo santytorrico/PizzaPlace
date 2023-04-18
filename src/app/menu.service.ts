@@ -1,44 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { MenuItem } from './menu-item';
+import { Firestore ,collection, addDoc, collectionData, doc, deleteDoc } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService {
-  private menuItems: MenuItem[] = [
-    {
-      id:1,
-      name: 'Newg',
-      description: 'Classic tomato Sauce, fresh mozzarella, special T sauce, basil',
-      price: 8.99,
-      imagePath: 'assets/images/newg-1-340x510.jpg'
-    },
-    {
-      id:2,
-      name: 'Buffalo66',
-      description: 'Spicy tomato sauce, fresh mozzarella, special T sauce, pepperoni, pickled fresno chilis, red pepper flakes',
-      price: 10.99,
-      imagePath: 'assets/images/buffalo66-340x510.jpg'
-    },
-    {
-      id:3,
-      name: 'Simp',
-      description: 'CLASSIC SAUCE, SPECIAL T SAUCE, FRESH MOZARELLA, SHREDDED MOZZARELLA, PARMESAN-ROMANO',
-      price: 6.99,
-      imagePath: 'assets/images/simp-340x510.jpg'
-    },
-    {
-      id:4,
-      name: 'BLK',
-      description: 'CLASSIC TOMATO SAUCE, BASIL,FRESH MOZZARELLA, GRILLED ONION, CHICKEN, CRUSHED RED PEPPER, CRACKED BLACK PEPPER, GARLIC PUREE',
-      price: 10.99,
-      imagePath: 'assets/images/blk-340x510.png'
-    }
-    // Add more menu items here
-  ];
+  constructor(private firestore:Firestore){}
 
-  getMenuItems(): Observable<MenuItem[]> {
-    return of(this.menuItems);
+  addMenuItem(menuItem:MenuItem){
+    const  menuItemsRef =collection(this.firestore, 'menuItems');
+    return addDoc(menuItemsRef, menuItem);
+  }
+  
+  getPizzas(): Observable<MenuItem[]>{
+    const  menuItemRef =collection(this.firestore, 'menuItems');
+    return collectionData(menuItemRef, {idField : 'id'}) as Observable<MenuItem[]>;
+  }
+  deleteMenuItem(menuItem:MenuItem){
+    const itemDocRef = doc(this.firestore,`menuItems/${menuItem.id}`);
+    return deleteDoc(itemDocRef);
   }
 }

@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="image-container">
+      <img src="/assets/images/pizza-ShopLandersV2-Mobile-01-scaled.jpg" alt="Image description">
+    </div>
+    <div class="form-container">
+      <h1 class="login-title">Login</h1>
+      <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="register-form">
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="text" class="form-control" formControlName="email">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" formControlName="password">
+        </div>
+        <input type="submit" value="Login">
+        <button class="register-link" (click)="onRegisterClick()">Don't have an account ?</button>
+      </form>
+      <div class="or-container">Or Login with</div>
+      <div class="google-btn-container">
+        <button class="btn btn-primary google-btn" (click)="onClickLoginGoogle()">
+          <i class="fa-brands fa-google"></i> Sign in with Google
+        </button>
+      </div>
+    </div>
+  </div>
+  

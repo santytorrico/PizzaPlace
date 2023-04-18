@@ -1,0 +1,90 @@
+html {
+  background-color: #F2E9E4;
+}
+
+header {
+  color: #fff;
+  padding: 10px;
+}
+
+.container {
+  margin-top: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #2F4858;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.table {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: #2F4858;
+
+  th {
+    border-bottom: 2px solid #2F4858;
+    font-weight: bold;
+  }
+
+  td {
+    padding: 10px;
+  }
+}
+
+p {
+  font-size: 18px;
+  color: #2F4858;
+  font-weight: bold;
+  margin: 0;
+}
+
+.back-button {
+  margin-top: 20px;
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+.back-arrow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #2F4858;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: #000;
+  }
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+.delete-button {
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}

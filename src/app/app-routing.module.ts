@@ -2,10 +2,19 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { ProductsComponent } from './products/products.component';
+import { AddPizzasComponent } from './add-pizzas/add-pizzas.component';
+import { AdminViewComponent } from './admin-view/admin-view.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import {canActivate, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
 
 const routes: Routes = [
-  {path:"Products", component:ProductsComponent},
+  {path:'', pathMatch: 'full', redirectTo: "/Products" },
+  {path:"Products", component:ProductsComponent, ...canActivate(()=> redirectUnauthorizedTo(['/Login']))},
   {path:"OrderSummary", component:OrderSummaryComponent},
+  {path:"Admin", component:AdminViewComponent},
+  {path:"Register", component:RegisterComponent},
+  {path:"Login", component:LoginComponent}
 ];
 
 @NgModule({
@@ -13,3 +22,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

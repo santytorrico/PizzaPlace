@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from '../menu-item';
 import { OrderService } from '../order.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-summary',
@@ -12,13 +13,20 @@ export class OrderSummaryComponent implements OnInit {
   totalPrice: number = 0;
   itemCount: number = 0;
 
-  constructor(private orderService: OrderService) {}
+  constructor(private orderService: OrderService,private router: Router) {}
 
   ngOnInit(): void {
     this.getOrderItems();
-    this.getTotalPrice();
     this.getItemCount();
     this.getOrderSubject();
+    this.getTotalPrice();
+    console.log(this.getTotalPrice())
+  }
+
+  removeFromOrder(index: number): void{
+    this.orderItems.splice(index, 1);
+    this.getTotalPrice();
+    this.getItemCount();
   }
 
   getOrderItems(): void {
@@ -26,7 +34,11 @@ export class OrderSummaryComponent implements OnInit {
   }
 
   getTotalPrice(): void {
-    this.totalPrice = this.orderService.getTotalPrice();
+    let total = 0;
+    this.orderItems.forEach(item => {
+      total += Number(item.price);
+    });
+    this.totalPrice = total;
   }
 
   getItemCount(): void {
@@ -36,4 +48,9 @@ export class OrderSummaryComponent implements OnInit {
   getOrderSubject(): void {
     this.orderService.getOrderSubject().subscribe(items => this.orderItems = items);
   }
+
+  navigateToProducts(): void {
+    this.router.navigate(['/Products']);
+  }
+  
 }

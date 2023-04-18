@@ -1,0 +1,125 @@
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .image-container {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .login-title {
+    position: absolute;
+    top: 0;
+    left: 74%;
+    transform: translateX(-50%);
+    margin-top: 8rem;
+  }
+  .form-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+  }
+  .form-container > div {
+    position: relative;
+    margin: 20px 0;
+    color: #000;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .form-control {
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  input[type="submit"] {
+    background-color: #90ECA5;
+    color: #000;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #90ECA5;
+  }
+  
+  .google-btn {
+    width: 100%;
+    max-width: 300px;
+    height: 40px;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+  
+  .register-form input[type="submit"]:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .form-control,
+  input[type="submit"],
+  .google-btn {
+    width: 100%;
+    max-width: 300px;
+    height: 40px;
+  }
+  .register-link {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    color: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .register-link:hover {
+    color: #90ECA5;
+  }
+  .or-container {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+  }
+  
+  
+  
+  
+  

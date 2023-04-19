@@ -15,9 +15,11 @@ import {provideFirestore,getFirestore} from '@angular/fire/firestore';
 import { AddPizzasComponent } from './add-pizzas/add-pizzas.component';
 import { PizzasListComponent } from './pizzas-list/pizzas-list.component';
 import { AdminViewComponent } from './admin-view/admin-view.component';
-import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component'
+import { LoginComponent } from './login/login.component';
+import { ToastrModule } from 'ngx-toastr';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,9 @@ import { RegisterComponent } from './register/register.component'
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [MenuService],
   bootstrap: [AppComponent]

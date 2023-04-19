@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { FirebaseCodeErrorService } from '../services/firebase-code-error.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,10 @@ export class LoginComponent implements OnInit {
 
   formLogin: FormGroup;
 
-  constructor(private userService:UserService, private router:Router){
+  constructor(private userService:UserService, 
+    private router:Router,
+    private toastr: ToastrService,
+    private firebaseError: FirebaseCodeErrorService){
     this.formLogin= new FormGroup({
       email: new FormControl(),
       password: new FormControl()
@@ -29,7 +34,10 @@ export class LoginComponent implements OnInit {
       this.router.navigate(["/Products"])
       console.log(response);
     })
-    .catch(error => console.log(error));
+    .catch((error) => {
+      //this.loading = false;
+      this.toastr.error(this.firebaseError.codeError(error.code), 'Error');
+    })
   }
 
   onClickLoginGoogle(){

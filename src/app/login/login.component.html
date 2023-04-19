@@ -5,11 +5,11 @@
     <div class="form-container">
       <h1 class="login-title">Login</h1>
       <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="register-form">
-        <div class="form-group">
+        <div class="form-floating mb-3">
           <label class="form-label">Email</label>
-          <input type="text" class="form-control" formControlName="email">
+          <input type="email" class="form-control" formControlName="email" placeholder="name@example.com">
         </div>
-        <div class="form-group">
+        <div class="form-floating mb-3">
           <label class="form-label">Password</label>
           <input type="password" class="form-control" formControlName="password">
         </div>

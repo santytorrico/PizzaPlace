@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { FirebaseCodeErrorService } from '../services/firebase-code-error.service';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +16,9 @@ export class RegisterComponent implements OnInit{
   formReg: FormGroup;
 
   constructor(private userService: UserService,
-     private router:Router){
+     private router:Router,
+     private toastr: ToastrService,
+     private firebaseError: FirebaseCodeErrorService){
     this.formReg = new FormGroup({
       email: new FormControl(),
       password: new FormControl()
@@ -31,7 +35,9 @@ export class RegisterComponent implements OnInit{
       console.log(response);
       this.router.navigate(['/Login'])
     })
-    .catch(error => console.log(error)); 
+    .catch((error) => {
+      this.toastr.error(this.firebaseError.codeError(error.code), 'Error');
+    });
     
   }
 

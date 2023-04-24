@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -16,11 +16,17 @@ export class LoginComponent implements OnInit {
 
   constructor(private userService:UserService, 
     private router:Router,
+    //
+    private fb: FormBuilder,
     private toastr: ToastrService,
     private firebaseError: FirebaseCodeErrorService){
-    this.formLogin= new FormGroup({
-      email: new FormControl(),
-      password: new FormControl()
+    // this.formLogin= new FormGroup({
+    //   email: new FormControl(),
+    //   password: new FormControl()
+    // })
+    this.formLogin= this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
     })
   }
 

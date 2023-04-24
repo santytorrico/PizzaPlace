@@ -7,12 +7,11 @@ import { ToastrService } from 'ngx-toastr';
 import { FirebaseCodeErrorService } from '../services/firebase-code-error.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  selector: 'app-recuperar-password',
+  templateUrl: './recuperar-password.component.html',
+  styleUrls: ['./recuperar-password.component.scss']
 })
-export class RegisterComponent implements OnInit{
-
+export class RecuperarPasswordComponent implements OnInit{
   formReg: FormGroup;
 
   constructor(private userService: UserService,
@@ -27,25 +26,16 @@ export class RegisterComponent implements OnInit{
     //   password: new FormControl()
     // })
     this.formReg = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-      confirmPassword: ['', [Validators.required, this.matchValues('password')]]
+      email: ['', [Validators.required, Validators.email]]
     });
   }
 
   ngOnInit(): void {
     
   }
-
-  matchValues(matchTo: string) {
-    return (control: any) => {
-      // control es el campo confirmPassword en este caso
-      return control?.value === control?.parent?.controls[matchTo].value ? null : {match: true}
-    }
-  }
-
-  onSubmit(){
-    this.userService.register(this.formReg.value)
+  
+  recovery(){
+    this.userService.recover(this.formReg.value)
     .then(response=>{
       console.log(response);
       this.router.navigate(['/Login'])

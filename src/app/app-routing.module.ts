@@ -7,6 +7,7 @@ import { AdminViewComponent } from './admin-view/admin-view.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import {canActivate, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
+import { RecuperarPasswordComponent } from './recuperar-password/recuperar-password.component';
 
 const routes: Routes = [
   {path:'', pathMatch: 'full', redirectTo: "/Products" },
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:"OrderSummary", component:OrderSummaryComponent},
   {path:"Admin", component:AdminViewComponent},
   {path:"Register", component:RegisterComponent},
-  {path:"Login", component:LoginComponent}
+  {path:"Login", component:LoginComponent},
+  {path:"Forgot", component:RecuperarPasswordComponent},
 ];
 
 @NgModule({

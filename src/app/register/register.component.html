@@ -1,50 +1,15 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Register - My Page</title>
-    <link rel="stylesheet" href="register.component.scss" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Registrarse</h1>
-      <form
-        [formGroup]="formReg"
-        (ngSubmit)="onSubmit()"
-        class="register-form my-custom-style"
-      >
-        <div class="form-group">
-          <label class="form-label">Email</label>
-          <input type="text" class="form-control" formControlName="email" />
-        </div>
-        <div class="form-group">
-          <label class="form-label">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            formControlName="password"
-          />
-        </div>
-        <input type="submit" value="Create Account" />
-        <a class="mt-3" routerLink="/Login">Volver</a>
-      </form>
-    </div>
-  </body>
-</html> -->
 <div class="container">
   <div class="row body justify-content-center">
     <div class="col-md-6 card-body text-secondary">
       <form class="register-form" [formGroup]="formReg" (ngSubmit)="onSubmit()">
-        <h1>Sign in</h1>
+        <h1>Register</h1>
         <div class="form-group form-floating mb-3">
           <input type="email" class="form-control" class="form-control" formControlName="email"
             placeholder="name@example.com">
           <label>Email</label>
           <div *ngIf="formReg.get('email')?.invalid && (formReg.get('email')?.dirty || formReg.get('email')?.touched)">
-            <small class="form-text text-danger" *ngIf="formReg.get('email')?.errors?.['required']">El correo
-              electrónico es requerido.</small>
-            <small class="form-text text-danger" *ngIf="formReg.get('email')?.errors?.['email']">El correo electrónico
-              no es válido.</small>
+            <small class="form-text text-danger" *ngIf="formReg.get('email')?.errors?.['required']">Email is required</small>
+            <small class="form-text text-danger" *ngIf="formReg.get('email')?.errors?.['email']">Invalid Email</small>
           </div>
         </div>
         <div class="form-group form-floating mb-3">
@@ -59,24 +24,23 @@
           </div>
           <span *ngIf="formReg.get('password')?.hasError('minlength') && formReg.get('password')?.touched"
             class="text-danger errorLabel">
-            El <strong>password</strong> debe tener 8 caracteres
+            The <strong>password</strong> must have 8 characteres
           </span>
           <div class="form-floating mb-3 mt-3">
             <input type="password" class="form-control" formControlName="confirmPassword"
               placeholder="Confirm Password">
-            <label>Repetir Password</label>
+            <label>Repeat Your Password</label>
             <div
               *ngIf="formReg.get('confirmPassword')?.invalid && (formReg.get('confirmPassword')?.dirty || formReg.get('confirmPassword')?.touched)">
-              <small class="form-text text-danger" *ngIf="formReg.get('confirmPassword')?.errors?.['match']">Las
-                contraseñas no coinciden.</small>
+              <small class="form-text text-danger" *ngIf="formReg.get('confirmPassword')?.errors?.['match']">
+                Passwords Doesn't Match.</small>
             </div>
           </div>
-          <!-- <button type="submit" class="btn btn-primary">Registrarse</button> -->
           <div class="d-grid gap-2 mb-3">
-            <button class="btn btn-primary btn-lg" [disabled]="formReg.invalid" type="submit">Ingresar</button>
+            <button class="btn btn-primary btn-lg" [disabled]="formReg.invalid" type="submit">Sign Up</button>
           </div>
         </div>
-        <a class="mt-3" routerLink="/Login">Volver</a>
+        <a class="mt-3" routerLink="/Login">Go Back</a>
       </form>
     </div>
   </div>

@@ -15,13 +15,13 @@ export class ProductsComponent implements OnInit  {
 
   constructor(private menuService: MenuService, private orderService: OrderService,private router: Router, private userService:UserService) {}
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.menuService.getPizzas().subscribe(menuItems=>{
       this.menuItems= menuItems;
     })
   }
 
-  addToOrder(item: MenuItem): void {
+  addToOrder(item: MenuItem) {
     this.orderService.addItemToOrder(item);
   }
   navigateToOrderSummary(): void {

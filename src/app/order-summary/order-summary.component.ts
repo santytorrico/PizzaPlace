@@ -27,6 +27,8 @@ export class OrderSummaryComponent implements OnInit {
 
   removeFromOrder(index: number) {
     this.orderService.deleteItem(index);
+    this.getItemCount();
+    this.getTotalPrice();
   }
 
   getOrderItems(): void {

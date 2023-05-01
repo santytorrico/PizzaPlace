@@ -26,7 +26,7 @@ export class MenuService {
 
   updateMenuItem(menuItem:MenuItem){
     const menuItemRef= doc(this.firestore, `menuItems/${menuItem.id}`);
-    const menuItemToUpdate: Partial<MenuItem> = { // Partial type to indicate that not all properties are required
+    const menuItemToUpdate: Partial<MenuItem> = { 
       name: menuItem.name,
       description: menuItem.description,
       imagePath: menuItem.imagePath,

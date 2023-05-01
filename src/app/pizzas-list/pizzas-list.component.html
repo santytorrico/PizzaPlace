@@ -9,11 +9,13 @@
         <button class="btn btn-delete" (click)="onClickDelete(menuItem)">Delete</button>
       </div>
     </div>
-    <div *ngIf="selectedMenuItem">
+    <div class="menu-edit-form" *ngIf="selectedMenuItem">
       <h2>Edit {{selectedMenuItem.name}}</h2>
       <form (ngSubmit)="onSubmit()">
         <label for="name">Name:</label>
         <input type="text" [(ngModel)]="selectedMenuItem.name" name="name">
+        <label for="image">Image:</label>
+        <input type="text" [(ngModel)]="selectedMenuItem.imagePath" name="image">
         <label for="price">Price:</label>
         <input type="number" [(ngModel)]="selectedMenuItem.price" name="price">
         <label for="description">Description:</label>

@@ -9,14 +9,10 @@ import { MenuService } from '../menu.service';
 })
 export class PizzasListComponent implements OnInit{
 
-  menuItems: MenuItem[];
+  menuItems: MenuItem[] = [];
+  selectedMenuItem: MenuItem | undefined;
   constructor(private menuService:MenuService){
-    this.menuItems= [{
-      name: 'simp',
-      description: 'CLASSIC SAUCE, SPECIAL T SAUCE, FRESH MOZARELLA, SHREDDED MOZZARELLA, PARMESAN-ROMANO',
-      price: 8.99,
-      imagePath: 'https://andpizza.com/wp-content/uploads/2021/01/simp-340x510.jpg'
-    }]
+   
   }
   ngOnInit(): void{
     this.menuService.getPizzas().subscribe(menuItems=>{
@@ -25,5 +21,16 @@ export class PizzasListComponent implements OnInit{
   }
   async onClickDelete(menuItem:MenuItem){
     const response= await this.menuService.deleteMenuItem(menuItem);
+  }
+
+  onClickEdit(menuItem: MenuItem){
+    this.selectedMenuItem = menuItem;
+  }
+
+  async onSubmit(){
+    if (this.selectedMenuItem) {
+      const response = await this.menuService.updateMenuItem(this.selectedMenuItem);
+      this.selectedMenuItem = undefined;
+    }
   }
 }

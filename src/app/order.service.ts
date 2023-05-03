@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { MenuItem } from './menu-item';
+import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class OrderService {
   private totalPrice: number = 0;
   private orderSubject: BehaviorSubject<MenuItem[]>;
 
-  constructor() {
+  constructor(private firestore:Firestore) {
     this.orderSubject = new BehaviorSubject<MenuItem[]>([]);
 
   }
@@ -32,7 +33,7 @@ export class OrderService {
   }
   
   getTotalPrice(): number {
-    return this.totalPrice;
+    return Number(this.totalPrice);
   }
 
   getItemCount(): number {
@@ -42,4 +43,19 @@ export class OrderService {
   getOrderSubject(): BehaviorSubject<MenuItem[]> {
     return this.orderSubject;
   }
+
+  confirmOrder(){
+    const orderRef= collection(this.firestore, 'orders');
+    const newOrder = {
+      items: this.cartItems,
+      totalPrice: Number(this.totalPrice),
+      status: 'Pending'
+    };
+    addDoc(orderRef, newOrder);
+
+    this.cartItems = [];
+    this.totalPrice = 0;
+    this.orderSubject.next(this.cartItems);
+  }
+  
 }

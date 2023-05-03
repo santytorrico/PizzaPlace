@@ -51,6 +51,13 @@ export class OrderSummaryComponent implements OnInit {
     this.orderService.getOrderSubject().subscribe(items => this.orderItems = items);
   }
 
+  confirmOrder(): void {
+    this.orderService.confirmOrder();
+    this.getItemCount();
+    this.getTotalPrice();
+    // Additional logic or navigation can be added here after confirming the order
+  }
+
   navigateToProducts(): void {
     this.router.navigate(['/Products']);
   }

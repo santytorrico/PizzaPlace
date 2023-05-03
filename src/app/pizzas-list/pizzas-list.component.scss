@@ -55,7 +55,66 @@
             background-color: darken(#dc3545, 10%);
           }
         }
+        .btn-edit{
+          margin-top: 10px;
+          margin-right: 10px;
+          padding: 5px 15px;
+          font-size: 16px;
+          font-size: bold;
+          color: #fff;
+          background-color: #4AA4E3;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover{
+            background-color: darken($color: #4AA4E3, $amount: 10%);
+          }
+        }
       }
     }
   }
+  .menu-edit-form {
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1rem;
+      align-items: center;
+      
+      label {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      input, textarea {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+    }
+    button[type="submit"] {
+      background-color: #4AA4E3;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+     
+      &:hover {
+        background-color: #00688B;
+      }
+    }
+  }
+  
+  
   

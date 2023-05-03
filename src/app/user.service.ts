@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Auth,createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth';
+import { sendPasswordResetEmail } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,9 @@ import { Auth,createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut
 export class UserService {
 
   constructor(private auth:Auth) { }
-
+  recover({email}:any){
+    return sendPasswordResetEmail(this.auth, email);
+  }
   register({email, password}:any){
     return createUserWithEmailAndPassword(this.auth, email, password);
   }

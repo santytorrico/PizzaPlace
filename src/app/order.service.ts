@@ -6,21 +6,29 @@ import { MenuItem } from './menu-item';
   providedIn: 'root'
 })
 export class OrderService {
-  private items: MenuItem[] = [];
+  private cartItems: MenuItem[] = [];
   private totalPrice: number = 0;
-  private itemCount: number = 0;
-  private orderSubject = new BehaviorSubject<MenuItem[]>([]);
+  private orderSubject: BehaviorSubject<MenuItem[]>;
 
-  constructor() {}
+  constructor() {
+    this.orderSubject = new BehaviorSubject<MenuItem[]>([]);
+
+  }
+  public get items(){
+    return this.orderSubject.asObservable();
+  }
 
   addItemToOrder(item: MenuItem): void {
-    this.items.push(item);
+    this.cartItems.push(item);
     this.totalPrice += item.price;
-    this.itemCount++;
-    this.orderSubject.next(this.items);
+    this.orderSubject.next(this.cartItems);
+  }
+  deleteItem(index: number){
+    this.cartItems.splice(index, 1);
+    this.orderSubject.next(this.cartItems);
   }
   getOrderItems(): MenuItem[] {
-    return this.items;
+    return this.cartItems;
   }
   
   getTotalPrice(): number {
@@ -28,7 +36,7 @@ export class OrderService {
   }
 
   getItemCount(): number {
-    return this.itemCount;
+    return this.cartItems.length;
   }
 
   getOrderSubject(): BehaviorSubject<MenuItem[]> {

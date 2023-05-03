@@ -1,27 +1,40 @@
 <div class="container">
-    <div class="image-container">
-      <img src="/assets/images/pizza-ShopLandersV2-Mobile-01-scaled.jpg" alt="Image description">
-    </div>
+  <div class="body">
+    <img src="assets/images/Logo_Pizza.jpeg" class="image-container" alt="Image description">
     <div class="form-container">
-      <h1 class="login-title">Login</h1>
+      <h1>Login</h1>
       <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="register-form">
-        <div class="form-group">
-          <label class="form-label">Email</label>
-          <input type="text" class="form-control" formControlName="email">
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" formControlName="email" placeholder="name@example.com">
+          <label>Email</label>
+          <span *ngIf="formLogin.get('email')?.hasError('required') && formLogin.get('email')?.touched"
+          class="text-danger errorLabel">
+           <strong>Email</strong> required
+        </span>
+        <span *ngIf="formLogin.get('email')?.hasError('email') && formLogin.get('email')?.touched"
+          class="text-danger errorLabel">
+          This is not a valid <strong>Email</strong>
+        </span>
         </div>
-        <div class="form-group">
-          <label class="form-label">Password</label>
-          <input type="password" class="form-control" formControlName="password">
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" formControlName="password" placeholder="Password">
+          <label>Password</label>
+          <span *ngIf="formLogin.get('password')?.hasError('required') && formLogin.get('password')?.touched"
+          class="text-danger errorLabel">
+          <strong>Password</strong> required
+        </span>
         </div>
-        <input type="submit" value="Login">
-        <button class="register-link" (click)="onRegisterClick()">Don't have an account ?</button>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary btn-lg">Login</button>
+            <p class="mt-3">Don't have an account? <a routerLink="/Register">Register</a></p>
+            <a class="mt-3" routerLink="/Forgot">Forgot Your Password?<a href=""></a></a>
+        </div>
       </form>
-      <div class="or-container">Or Login with</div>
-      <div class="google-btn-container">
-        <button class="btn btn-primary google-btn" (click)="onClickLoginGoogle()">
+      <div class="d-grid mt-3">
+        <button class="google-btn" (click)="onClickLoginGoogle()">
           <i class="fa-brands fa-google"></i> Sign in with Google
         </button>
       </div>
     </div>
   </div>
-  
+</div>

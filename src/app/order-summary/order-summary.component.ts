@@ -15,18 +15,20 @@ export class OrderSummaryComponent implements OnInit {
 
   constructor(private orderService: OrderService,private router: Router) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getOrderItems();
     this.getItemCount();
-    this.getOrderSubject();
+    this.orderService.items.subscribe(orderItems =>{
+      this.orderItems = orderItems;
+    });
     this.getTotalPrice();
     console.log(this.getTotalPrice())
   }
 
-  removeFromOrder(index: number): void{
-    this.orderItems.splice(index, 1);
-    this.getTotalPrice();
+  removeFromOrder(index: number) {
+    this.orderService.deleteItem(index);
     this.getItemCount();
+    this.getTotalPrice();
   }
 
   getOrderItems(): void {

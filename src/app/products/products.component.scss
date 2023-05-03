@@ -73,13 +73,24 @@
   height: auto;
 }
 
+.menu-item {
+  position: relative;
+  text-align: center;
+}
+
+.menu-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .menu-item-details {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
-  max-width: 350px;
+  max-width: 483px;
   height: 50px;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.7);
@@ -106,7 +117,7 @@
 
 .menu-item-btn {
   display: block;
-  margin: 10px auto 0;
+  margin: 10px ;
   color: #000;
   background-color: #fff;
   border: 1px solid #000;
@@ -122,6 +133,16 @@
 
 .menu-item-btn:hover i.fa-cart-plus {
   animation: bounce 0.5s;
+}
+
+@media (max-width: 768px) {
+  .menu-col {
+    width: 100%;
+  }
+
+  .menu-item-details {
+    max-width: none;
+  }
 }
 
 @keyframes bounce {

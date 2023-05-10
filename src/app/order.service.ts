@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { MenuItem } from './menu-item';
 import { OrderItem } from './order-item';
-import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, collectionData, updateDoc, doc } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -58,9 +58,15 @@ export class OrderService {
     this.totalPrice = 0;
     this.orderSubject.next(this.cartItems);
   }
+
   getOrders(): Observable<OrderItem[]> {
     const orderRef = collection(this.firestore, 'orders');
     return collectionData(orderRef, { idField: 'id' }) as Observable<OrderItem[]>;
+  }
+
+  updateOrderStatus(orderId: string, newStatus: string) {
+    const orderRef = doc(this.firestore, 'orders', orderId);
+    updateDoc(orderRef, { status: newStatus });
   }
   
 }

@@ -1,7 +1,7 @@
 import { MenuItem } from "./menu-item";
 
 export interface OrderItem {
-    id?: number;
+    id?: string;
     items: MenuItem[];
     totalPrice: number;
     status: string;

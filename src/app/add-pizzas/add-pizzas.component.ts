@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MenuService } from '../menu.service';
 
 @Component({
@@ -25,6 +25,10 @@ export class AddPizzasComponent implements OnInit {
   
   async onSubmit(){
     console.log(this.form.value);
+
+    const menuItem= this.form.value;
+    menuItem.price = Number(menuItem.price)
+    
     const response = await this.menuService.addMenuItem(this.form.value);
     console.log(response);
   }

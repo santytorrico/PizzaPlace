@@ -1,0 +1,16 @@
+<body>
+<p class = "product-view-text">PRODUCT VIEW WORKS</p>
+<div *ngIf="item">
+    <div> class = "nombre-del-producto">Pizza Slushie</div>
+    <p class = "nombre-del-producto">Pizza Slushie</p>
+    <div>Nombre: {{item.name}}</div>
+    <div>Precio: {{item.price}}</div>
+    <img src="{{item.imagePath}}" alt="">    
+</div>
+
+
+
+
+<button (click)="addToCart()">ADD TO CART</button>
+
+</body>

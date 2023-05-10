@@ -42,6 +42,8 @@
             </table>
             <p>Total Price: $ {{ totalPrice }}</p>
             <p>Number of Items: {{ itemCount }}</p>
+            <button class="confirm-button" (click)="confirmOrder()">Confirm Order</button>
+
             <button class="back-button" (click)="navigateToProducts()">Add more Items</button>
           </div>
         </div>

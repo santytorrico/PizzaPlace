@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { MenuItem } from './menu-item';
-import { Firestore ,collection, addDoc, collectionData, doc, deleteDoc,updateDoc } from '@angular/fire/firestore';
+import { Firestore ,collection, addDoc, collectionData, doc, deleteDoc,updateDoc, getDoc } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,10 @@ export class MenuService {
   deleteMenuItem(menuItem:MenuItem){
     const itemDocRef = doc(this.firestore,`menuItems/${menuItem.id}`);
     return deleteDoc(itemDocRef);
+  }
+  findMenuItem(id: string =''){
+    const recItem = doc(this.firestore, `menuItems/${id}`);
+    return getDoc(recItem);
   }
 
   updateMenuItem(menuItem:MenuItem){

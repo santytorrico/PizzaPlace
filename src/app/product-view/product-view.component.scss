@@ -22,5 +22,27 @@ body {
   .horizontal-image{
     transform: rotate(90deg);
   }
+  .addToCart {
+    display: block;
+    margin: auto;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #fff;
+    background-color: #444;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  .centered-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  
 
   

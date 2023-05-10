@@ -1,15 +1,11 @@
 <body>
-<p class = "product-view-text">PRODUCT VIEW</p>
-<div *ngIf="item">
-    <div>Nombre: {{item.name}}</div>
-    <div>Precio: {{item.price}}</div>
-    <div>Ingredientes: </div>
-    <img class = "horizontal-image" src="{{item.imagePath}}" alt="">    
-</div>
-
-
-
-
-<button (click)="addToCart()">ADD TO CART</button>
-
-</body>
+    <p class="product-view-text">PRODUCT VIEW</p>
+    <div *ngIf="item">
+      <div>Nombre: {{item.name}}</div>
+      <div>Precio: {{item.price}}</div>
+      <div>Ingredientes:</div>
+      <img class="horizontal-image" src="{{item.imagePath}}" alt="">
+      <button class="addToCart centered-button" (click)="addToCart()">ADD TO CART</button>
+    </div>
+  </body>
+  

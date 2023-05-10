@@ -21,6 +21,8 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecuperarPasswordComponent } from './recuperar-password/recuperar-password.component';
+import { ProductViewComponent } from './product-view/product-view.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,7 @@ import { RecuperarPasswordComponent } from './recuperar-password/recuperar-passw
     LoginComponent,
     RegisterComponent,
     RecuperarPasswordComponent,
+    ProductViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,9 @@ import { RecuperarPasswordComponent } from './recuperar-password/recuperar-passw
     provideFirestore(() => getFirestore()),
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+    // RouterModule.forRoot([
+    //   { path: 'menuItems/:menuItemsName', component: ProductViewComponent},
+    // ])
   ],
   providers: [MenuService],
   bootstrap: [AppComponent]

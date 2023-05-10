@@ -5,7 +5,7 @@
         <h1>Register</h1>
         <div class="form-group form-floating mb-3">
           <input type="email" class="form-control" class="form-control" formControlName="email"
-            placeholder="name@example.com">
+            placeholder="name@example.com" [(ngModel)]="datos.email">
           <label>Email</label>
           <div *ngIf="formReg.get('email')?.invalid && (formReg.get('email')?.dirty || formReg.get('email')?.touched)">
             <small class="form-text text-danger" *ngIf="formReg.get('email')?.errors?.['required']">Email is required</small>
@@ -13,7 +13,7 @@
           </div>
         </div>
         <div class="form-group form-floating mb-3">
-          <input type="password" class="form-control" formControlName="password" placeholder="Password">
+          <input type="password" class="form-control" formControlName="password" placeholder="Password" [(ngModel)]="datos.password">
           <label>Password</label>
           <div
             *ngIf="formReg.get('password')?.invalid && (formReg.get('password')?.dirty || formReg.get('password')?.touched)">

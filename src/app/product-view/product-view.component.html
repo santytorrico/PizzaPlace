@@ -1,0 +1,12 @@
+<body>
+    <div *ngIf="item">
+      <img class="horizontal-image" src="{{item.imagePath}}" alt="">
+      <div class="product-details">
+        <div>{{item.name}}</div>
+        <div>Price: ${{item.price}}</div>
+        <div>Ingredients: {{item.description}}</div>
+        <button class="addToCart centered-button" (click)="addToCart()">ADD TO CART</button>
+      </div>
+    </div>
+  </body>
+  

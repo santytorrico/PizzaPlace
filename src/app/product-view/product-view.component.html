@@ -3,7 +3,7 @@
     <div *ngIf="item">
       <div>Nombre: {{item.name}}</div>
       <div>Precio: {{item.price}}</div>
-      <div>Ingredientes:</div>
+      <div>Ingredientes: {{item.description}}</div>
       <img class="horizontal-image" src="{{item.imagePath}}" alt="">
       <button class="addToCart centered-button" (click)="addToCart()">ADD TO CART</button>
     </div>

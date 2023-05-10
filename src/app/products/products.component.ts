@@ -4,7 +4,7 @@ import { MenuService } from '../menu.service';
 import { OrderService } from '../order.service';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
-import { user } from '@angular/fire/auth';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { FirestoreDatosService } from '../firestore-datos.service';
 @Component({
   selector: 'app-products',

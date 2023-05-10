@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { MenuItem } from './menu-item';
-import { Firestore, collection, addDoc } from '@angular/fire/firestore';
+import { OrderItem } from './order-item';
+import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +57,10 @@ export class OrderService {
     this.cartItems = [];
     this.totalPrice = 0;
     this.orderSubject.next(this.cartItems);
+  }
+  getOrders(): Observable<OrderItem[]> {
+    const orderRef = collection(this.firestore, 'orders');
+    return collectionData(orderRef, { idField: 'id' }) as Observable<OrderItem[]>;
   }
   
 }

@@ -21,6 +21,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecuperarPasswordComponent } from './recuperar-password/recuperar-password.component';
+import { ChefViewComponent } from './chef-view/chef-view.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { RecuperarPasswordComponent } from './recuperar-password/recuperar-passw
     LoginComponent,
     RegisterComponent,
     RecuperarPasswordComponent,
+    ChefViewComponent,
   ],
   imports: [
     BrowserModule,

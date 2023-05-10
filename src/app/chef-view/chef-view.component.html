@@ -1,0 +1,13 @@
+<ul>
+    <li *ngFor="let orderItem of orderItems">
+      <h3>Order #{{ orderItem.id }}</h3>
+      <p>Status: {{ orderItem.status }}</p>
+      <ul>
+        <li *ngFor="let menuItem of orderItem.items">
+          {{ menuItem.name }} - {{ menuItem.price }}
+        </li>
+      </ul>
+      <p>Total price: {{ orderItem.totalPrice }}</p>
+    </li>
+  </ul>
+  

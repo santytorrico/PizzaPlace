@@ -4,7 +4,7 @@ import { MenuService } from '../menu.service';
 import { OrderService } from '../order.service';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
-import { user } from '@angular/fire/auth';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -12,8 +12,9 @@ import { user } from '@angular/fire/auth';
 })
 export class ProductsComponent implements OnInit  {
   menuItems: MenuItem[] = [];
+  // const auth = getAuth();
 
-  constructor(private menuService: MenuService, private orderService: OrderService,private router: Router, private userService:UserService) {}
+  constructor(private menuService: MenuService, private orderService: OrderService,private router: Router, private userService:UserService,) {}
 
   async ngOnInit() {
     this.menuService.getPizzas().subscribe(menuItems=>{
@@ -27,6 +28,13 @@ export class ProductsComponent implements OnInit  {
   navigateToOrderSummary(): void {
     this.router.navigate(['/OrderSummary']);
   }
+  // onAuthStateChanged(auth,(user)=>{
+  //   if (user){
+  //     const uid = user.uid;
+  //   }else{
+
+  //   }
+  // });
 
   onClickLogout(){
     this.userService.logout() 

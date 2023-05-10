@@ -8,6 +8,7 @@
         </li>
       </ul>
       <p>Total price: {{ orderItem.totalPrice }}</p>
+      <!-- <button *ngIf="orderItem.status === 'Pending'" (click)="updateOrderStatus(orderItem.id, 'In Progress')">Mark as In Progress</button>
+      <button *ngIf="orderItem.status === 'In Progress'" (click)="updateOrderStatus(orderItem.id, 'Ready')">Mark as Ready</button> -->
     </li>
   </ul>
-  

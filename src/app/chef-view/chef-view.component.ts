@@ -18,5 +18,8 @@ export class ChefViewComponent {
       this.orderItems= orderItems;
     })
   }
+  updateOrderStatus(id: string, newStatus: string) {
+    this.orderService.updateOrderStatus(id, newStatus);
+  }
   
 }

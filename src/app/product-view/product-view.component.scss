@@ -6,12 +6,21 @@ body {
     font-size: 30px;
     font-weight: bold;
     font-family: Arial, sans-serif;
-    color: #ffffff;
+    text-align: center;
+    color: #090202;
   }
 
 
   div {
-    font-size: 24px;
+    font-size: 30px;
+    font-weight: bolder;
     font-family: Arial, sans-serif;
+    text-align: center;
+    color: #140808;
   }
+
+  .horizontal-image{
+    transform: rotate(90deg);
+  }
+
   

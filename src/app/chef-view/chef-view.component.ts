@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Pipe, PipeTransform } from '@angular/core';
 import { OrderService } from '../order.service';
 import { OrderItem } from '../order-item';
 

@@ -5,6 +5,8 @@ import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { FirebaseCodeErrorService } from '../services/firebase-code-error.service';
+import { UserI } from '../UserInfo';
+import { FirestoreDatosService } from '../firestore-datos.service';
 
 @Component({
   selector: 'app-register',
@@ -14,6 +16,14 @@ import { FirebaseCodeErrorService } from '../services/firebase-code-error.servic
 export class RegisterComponent implements OnInit{
 
   formReg: FormGroup;
+  item: any;
+  id1: string | undefined ='';
+  datos: UserI = {
+    email: '',
+    password: '',
+    uid: '',
+    perfil: 'visitante'
+  }
 
   constructor(private userService: UserService,
      private router:Router,
@@ -21,6 +31,8 @@ export class RegisterComponent implements OnInit{
      private fb: FormBuilder,
      //
      private toastr: ToastrService,
+
+     private firestore: FirestoreDatosService, 
      private firebaseError: FirebaseCodeErrorService){
     // this.formReg = new FormGroup({
     //   email: new FormControl(),
@@ -48,12 +60,23 @@ export class RegisterComponent implements OnInit{
     this.userService.register(this.formReg.value)
     .then(response=>{
       console.log(response);
-      this.router.navigate(['/Login'])
+      //
+      const path = 'Usuarios';
+      const id= response.user.uid;
+      this.datos.uid = id;
+      this.datos.password= ''
+      this.firestore.createDoc(this.datos, path, id).then
+      this.router.navigate(['/Login']);
+
     })
     .catch((error) => {
       this.toastr.error(this.firebaseError.codeError(error.code), 'Error');
     });
     
+  }
+
+  getIdPersona(id: string | undefined){
+    this.firestore.findObject(id,'Usuarios').then(person=>this.item=person.data());
   }
 
 }

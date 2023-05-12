@@ -7,7 +7,8 @@ import { Firestore ,collection, addDoc, collectionData, doc, deleteDoc,updateDoc
   providedIn: 'root'
 })
 export class MenuService {
-  constructor(private firestore:Firestore){}
+  menuItems: MenuItem[] = [];
+  constructor(private firestore:Firestore,){}
 
   addMenuItem(menuItem:MenuItem){
     const  menuItemsRef =collection(this.firestore, 'menuItems');
@@ -19,10 +20,17 @@ export class MenuService {
     return collectionData(menuItemRef, {idField : 'id'}) as Observable<MenuItem[]>;
   }
 
+  getPizza(ItemId: string){
+
+
+  }
+
   deleteMenuItem(menuItem:MenuItem){
     const itemDocRef = doc(this.firestore,`menuItems/${menuItem.id}`);
     return deleteDoc(itemDocRef);
+
   }
+
   findMenuItem(id: string =''){
     const recItem = doc(this.firestore, `menuItems/${id}`);
     return getDoc(recItem);

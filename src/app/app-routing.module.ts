@@ -22,6 +22,7 @@ const routes: Routes = [
   {path:"Forgot", component:RecuperarPasswordComponent},
   {path:"ChefView", component:ChefViewComponent},
   {path: "ProductDetail/:id", component:ProductViewComponent},
+  {path:"ChefView", component:ChefViewComponent}
 ];
 
 @NgModule({

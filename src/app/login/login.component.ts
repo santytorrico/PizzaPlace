@@ -46,6 +46,14 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  // onClickLoginGoogle(){
+  //   this.userService.loginWithGoogle()
+  //   .then(response=>{
+  //     this.router.navigate(["/Products"]);
+  //   })
+  //   .catch(error=> console.log(error))
+  // }
+
   onClickLoginGoogle(){
     this.userService.loginWithGoogle()
     .then(response=>{
@@ -53,6 +61,7 @@ export class LoginComponent implements OnInit {
     })
     .catch(error=> console.log(error))
   }
+  
   onRegisterClick() {
     this.router.navigate(['/Register']);
     }

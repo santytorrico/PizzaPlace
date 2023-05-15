@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Firestore,collection, addDoc, collectionData, doc, deleteDoc,updateDoc } from '@angular/fire/firestore';
-import { getDoc } from 'firebase/firestore';
+import { ref } from '@angular/fire/database';
+import { Firestore,collection, addDoc, collectionData, doc, deleteDoc,updateDoc, docData, documentId, docSnapshots } from '@angular/fire/firestore';
+import { CollectionReference, DocumentReference, getDoc, setDoc } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,12 @@ export class FirestoreDatosService {
 
    createDoc(data: any, path: string, id: string) {
     // const collection = this.firestore.collection(path);
+    // const usuarioRef = collection(this.firestore, path);
+    // const usuarioRef = collection(this.firestore, path);
+    // return addDoc(usuarioRef,data);
     const usuarioRef = collection(this.firestore, path);
-    return addDoc(usuarioRef,data);
+    const docrRef = doc(usuarioRef.firestore, `${path}/${id}`)
+    return setDoc(docrRef, data);
    }
    findObject(id: string = '', path: string){
     // const recPerson=doc(this.firestore,`${path}/${id}`);

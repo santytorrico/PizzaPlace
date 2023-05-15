@@ -9,17 +9,19 @@ import { LoginComponent } from './login/login.component';
 import {canActivate, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
 import { RecuperarPasswordComponent } from './recuperar-password/recuperar-password.component';
 import { ProductViewComponent } from './product-view/product-view.component';
+import { ChefViewComponent } from './chef-view/chef-view.component';
 
 const routes: Routes = [
   {path:'', pathMatch: 'full', redirectTo: "/Products" },
-  // {path:"Products", component:ProductsComponent, ...canActivate(()=> redirectUnauthorizedTo(['/Login']))},
-  {path:"Products", component:ProductsComponent},
+  {path:"Products", component:ProductsComponent, ...canActivate(()=> redirectUnauthorizedTo(['/Login']))},
+  // {path:"Products", component:ProductsComponent},
   {path:"OrderSummary", component:OrderSummaryComponent},
   {path:"Admin", component:AdminViewComponent},
   {path:"Register", component:RegisterComponent},
   {path:"Login", component:LoginComponent},
   {path:"Forgot", component:RecuperarPasswordComponent},
   {path: "ProductDetail/:id", component:ProductViewComponent},
+  {path:"ChefView", component:ChefViewComponent}
 ];
 
 @NgModule({

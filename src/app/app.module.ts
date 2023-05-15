@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecuperarPasswordComponent } from './recuperar-password/recuperar-password.component';
 import { ProductViewComponent } from './product-view/product-view.component';
 import { RouterModule } from '@angular/router';
+import { ChefViewComponent } from './chef-view/chef-view.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { RouterModule } from '@angular/router';
     RegisterComponent,
     RecuperarPasswordComponent,
     ProductViewComponent,
+    ChefViewComponent,
   ],
   imports: [
     BrowserModule,

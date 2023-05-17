@@ -17,6 +17,7 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     color: #140808;
+    background-color: #d3b10a;
   }
 
   .horizontal-image{
@@ -42,6 +43,20 @@ body {
     justify-content: center;
     margin-top: 20px;
   }
+.goback{
+  display: block;
+    margin: auto;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    color: #0e0707;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+  
   
   
 

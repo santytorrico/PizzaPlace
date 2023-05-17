@@ -75,5 +75,8 @@ export class ProductsComponent implements OnInit  {
 
     console.log('este es el resultado', this.datosUser.findObject(uid,path));
   }
+  goHome(){
+    this.router.navigate(['/Home-View']);
+  }
   
 }

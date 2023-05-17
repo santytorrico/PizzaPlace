@@ -21,6 +21,7 @@ const routes: Routes = [
   {path:"Register", component:RegisterComponent},
   {path:"Login", component:LoginComponent},
   {path:"Forgot", component:RecuperarPasswordComponent},
+  {path:"ChefView", component:ChefViewComponent},
   {path: "ProductDetail/:id", component:ProductViewComponent},
   {path:"ChefView", component:ChefViewComponent},
   {path: "Home-View", component:HomeViewComponent},

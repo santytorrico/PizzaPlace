@@ -24,6 +24,7 @@ import { RecuperarPasswordComponent } from './recuperar-password/recuperar-passw
 import { ProductViewComponent } from './product-view/product-view.component';
 import { RouterModule } from '@angular/router';
 import { ChefViewComponent } from './chef-view/chef-view.component';
+import { HomeViewComponent } from './home-view/home-view.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import { ChefViewComponent } from './chef-view/chef-view.component';
     RecuperarPasswordComponent,
     ProductViewComponent,
     ChefViewComponent,
+    HomeViewComponent,
   ],
   imports: [
     BrowserModule,

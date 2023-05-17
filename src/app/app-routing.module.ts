@@ -10,6 +10,7 @@ import {canActivate, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
 import { RecuperarPasswordComponent } from './recuperar-password/recuperar-password.component';
 import { ProductViewComponent } from './product-view/product-view.component';
 import { ChefViewComponent } from './chef-view/chef-view.component';
+import { HomeViewComponent } from './home-view/home-view.component';
 
 const routes: Routes = [
   {path:'', pathMatch: 'full', redirectTo: "/Products" },
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:"Login", component:LoginComponent},
   {path:"Forgot", component:RecuperarPasswordComponent},
   {path: "ProductDetail/:id", component:ProductViewComponent},
-  {path:"ChefView", component:ChefViewComponent}
+  {path:"ChefView", component:ChefViewComponent},
+  {path: "Home-View", component:HomeViewComponent},
 ];
 
 @NgModule({

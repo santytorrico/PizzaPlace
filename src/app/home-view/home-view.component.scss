@@ -1,0 +1,119 @@
+body{
+    background-color: #d3b10a;
+}
+h1 {
+    font-family: "Arial", sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out infinite;
+
+}
+  
+.info-section{
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 24px;
+  color: #333;
+  font-family: "Arial", sans-serif;
+}
+
+p {
+  font-family: "Impact", sans-serif;
+  font-size: 18px;
+  color: rgb(14, 1, 1);
+  text-align: left;
+  line-height: 1.5;
+}
+
+.circle-header{
+  display: inline-block;
+  padding: 10px;
+  background-color: #b14f4f;
+  color: rgb(14, 1, 1);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.quienesSomos{
+  display: inline-block;
+  padding: 10px;
+  background-color: #030101;
+  color: rgb(233, 218, 218);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.queHacemos{
+  display: inline-block;
+  padding: 10px;
+  background-color: #030101;
+  color: rgb(233, 218, 218);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.contact{
+  display: inline-block;
+  padding: 10px;
+  background-color: #030101;
+  color: rgb(233, 218, 218);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.mision{
+  display: inline-block;
+  padding: 10px;
+  background-color: #030101;
+  color: rgb(233, 218, 218);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.vision{
+  display: inline-block;
+  padding: 10px;
+  background-color: #030101;
+  color: rgb(233, 218, 218);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.team{
+  display: inline-block;
+  padding: 10px;
+  background-color: #030101;
+  color: rgb(233, 218, 218);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.goback{
+  display: block;
+    margin: auto;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    color: #0e0707;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.logo{
+  display: block; /* Set the image as a block element */
+  margin: 0 auto;
+  position: absolute;
+  top: 20%; /* Adjust the top position as needed */
+  left: 35%; /* Adjust the left position as needed */
+  z-index: 1;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }

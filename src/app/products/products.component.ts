@@ -78,5 +78,8 @@ export class ProductsComponent implements OnInit  {
 
     console.log('2...este es el resultado', this.item);
   }
+  goHome(){
+    this.router.navigate(['/Home-View']);
+  }
   
 }

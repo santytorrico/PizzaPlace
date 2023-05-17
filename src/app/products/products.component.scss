@@ -35,6 +35,16 @@
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
+.GoHome {
+  font-size: large;
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px;
+  text-align: center;
+  color: #000;
+  text-align: left;
+}
+
 .nav-link:hover {
   background-color: #333;
   color: #fff;

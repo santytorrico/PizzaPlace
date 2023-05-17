@@ -14,8 +14,8 @@ import { HomeViewComponent } from './home-view/home-view.component';
 
 const routes: Routes = [
   {path:'', pathMatch: 'full', redirectTo: "/Products" },
-  {path:"Products", component:ProductsComponent, ...canActivate(()=> redirectUnauthorizedTo(['/Login']))},
-  // {path:"Products", component:ProductsComponent},
+  //{path:"Products", component:ProductsComponent, ...canActivate(()=> redirectUnauthorizedTo(['/Login']))},
+  {path:"Products", component:ProductsComponent},
   {path:"OrderSummary", component:OrderSummaryComponent},
   {path:"Admin", component:AdminViewComponent},
   {path:"Register", component:RegisterComponent},

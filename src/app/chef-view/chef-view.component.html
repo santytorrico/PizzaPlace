@@ -9,7 +9,7 @@
           <li *ngFor="let item of order.items">{{ item.name }} - {{ item.price }}</li>
         </ul>
         <p>Total Price: {{ order.totalPrice }}</p>
-        <button (click)="updateOrderStatus(order.id ?? '', 'In Progress')">Mark as In Progress</button>
+        <button class="update-button" (click)="updateOrderStatus(order.id ?? '', 'In Progress')">Mark as In Progress</button>
       </div>
     </ng-container>
   </div>
@@ -23,7 +23,7 @@
           <li *ngFor="let item of order.items">{{ item.name }} - {{ item.price }}</li>
         </ul>
         <p>Total Price: {{ order.totalPrice }}</p>
-        <button (click)="updateOrderStatus(order.id ?? '', 'Ready')">Mark as Ready</button>
+        <button class="update-button" (click)="updateOrderStatus(order.id ?? '', 'Ready')">Mark as Ready</button>
       </div>
     </ng-container>
   </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem } from '../menu-item';
 import { OrderService } from '../order.service';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-order-summary',
@@ -12,8 +13,9 @@ export class OrderSummaryComponent implements OnInit {
   orderItems: MenuItem[] = [];
   totalPrice: number = 0;
   itemCount: number = 0;
+  email: string = '';
 
-  constructor(private orderService: OrderService,private router: Router) {}
+  constructor(private orderService: OrderService,private router: Router, private userService: UserService) {}
 
   ngOnInit() {
     this.getOrderItems();
@@ -52,9 +54,13 @@ export class OrderSummaryComponent implements OnInit {
   }
 
   confirmOrder(): void {
-    this.orderService.confirmOrder();
-    this.getItemCount();
-    this.getTotalPrice();
+    this.userService.stateUser().subscribe( res => {
+      console.log('Email: ', res?.email);
+      this.email= res?.email ?? '';
+      this.orderService.confirmOrder(this.email);
+      this.getItemCount();
+      this.getTotalPrice();
+    })
     // Additional logic or navigation can be added here after confirming the order
   }
 

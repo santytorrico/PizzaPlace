@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Pipe, PipeTransform } from '@angular/core';
 import { OrderService } from '../order.service';
 import { OrderItem } from '../order-item';
 
@@ -20,6 +20,9 @@ export class ChefViewComponent {
   }
   updateOrderStatus(id: string, newStatus: string) {
     this.orderService.updateOrderStatus(id, newStatus);
+  }
+  storeReadyOrders() {
+    this.orderService.storeReadyOrders(this.orderItems)
   }
   
 }

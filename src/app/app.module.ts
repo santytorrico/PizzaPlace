@@ -18,6 +18,8 @@ import { AdminViewComponent } from './admin-view/admin-view.component';
 import { RegisterComponent } from './register/register.component'
 import { LoginComponent } from './login/login.component';
 import { ToastrModule } from 'ngx-toastr';
+import { FilterPipe } from './filter.pipe';
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecuperarPasswordComponent } from './recuperar-password/recuperar-password.component';
@@ -30,6 +32,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 @NgModule({
   declarations: [
     AppComponent,
+    FilterPipe,
     ProductsComponent,
     OrderSummaryComponent,
     AddPizzasComponent,

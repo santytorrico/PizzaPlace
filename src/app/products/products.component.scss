@@ -173,3 +173,16 @@
     transform: scale(1.4);
   }
 }
+.navbar-brand {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  font-family: cursive;
+}
+ .navbar {
+  background-color: #0a0505;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}

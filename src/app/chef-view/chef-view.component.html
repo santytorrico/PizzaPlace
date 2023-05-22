@@ -1,14 +1,44 @@
-<ul>
-    <li *ngFor="let orderItem of orderItems">
-      <h3>Order #{{ orderItem.id }}</h3>
-      <p>Status: {{ orderItem.status }}</p>
-      <ul>
-        <li *ngFor="let menuItem of orderItem.items">
-          {{ menuItem.name }} - {{ menuItem.price }}
-        </li>
-      </ul>
-      <p>Total price: {{ orderItem.totalPrice }}</p>
-      <!-- <button *ngIf="orderItem.status === 'Pending'" (click)="updateOrderStatus(orderItem.id, 'In Progress')">Mark as In Progress</button>
-      <button *ngIf="orderItem.status === 'In Progress'" (click)="updateOrderStatus(orderItem.id, 'Ready')">Mark as Ready</button> -->
-    </li>
-  </ul>
+<div class="row">
+  <div class="col-md-4">
+    <h3>Pending Orders</h3>
+    <ng-container *ngFor="let order of orderItems">
+      <div *ngIf="order.status === 'Pending'">
+        <p>Order #{{ order.id }}</p>
+        <p>Status: {{ order.status }}</p>
+        <ul>
+          <li *ngFor="let item of order.items">{{ item.name }} - {{ item.price }}</li>
+        </ul>
+        <p>Total Price: {{ order.totalPrice }}</p>
+        <button class="update-button" (click)="updateOrderStatus(order.id ?? '', 'In Progress')">Mark as In Progress</button>
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-md-4">
+    <h3>In Progress Orders</h3>
+    <ng-container *ngFor="let order of orderItems">
+      <div *ngIf="order.status === 'In Progress'">
+        <p>Order #{{ order.id }}</p>
+        <p>Status: {{ order.status }}</p>
+        <ul>
+          <li *ngFor="let item of order.items">{{ item.name }} - {{ item.price }}</li>
+        </ul>
+        <p>Total Price: {{ order.totalPrice }}</p>
+        <button class="update-button" (click)="updateOrderStatus(order.id ?? '', 'Ready')">Mark as Ready</button>
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-md-4">
+    <h3>Ready Orders</h3>
+    <ng-container *ngFor="let order of orderItems">
+      <div *ngIf="order.status === 'Ready'">
+        <p>Order #{{ order.id }}</p>
+        <p>Status: {{ order.status }}</p>
+        <ul>
+          <li *ngFor="let item of order.items">{{ item.name }} - {{ item.price }}</li>
+        </ul>
+        <p>Total Price: {{ order.totalPrice }}</p>
+      </div>
+    </ng-container>
+    <button class="update-button" (click)="storeReadyOrders()">Store Ready Orders</button>
+  </div>
+</div>

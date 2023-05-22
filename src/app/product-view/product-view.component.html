@@ -1,14 +1,15 @@
 <body>
-    <!-- <p class="product-view-text">PRODUCT VIEW</p> -->
     <div *ngIf="item">
-      <div>Nombre: {{item.name}}</div>
-      <div>Precio: {{item.price}}</div>
-      <div>Ingredientes: {{item.description}}</div>
       <img class="horizontal-image" src="{{item.imagePath}}" alt="">
-      <button class="addToCart centered-button" (click)="addToOrder(item); navigateToOrderSummary(login)">Add to Cart</button>
+      <div class="product-details">
+        <div>{{item.name}}</div>
+        <div>Price: ${{item.price}}</div>
+        <div>Ingredients: {{item.description}}</div>
+        <button class="addToCart centered-button" (click)="addToOrder(item); navigateToOrderSummary(login)">Add to Cart</button>
     </div>
     <div>
       <button class="goBack" (click)="goBack()">Return</button>
+      </div>
     </div>
     
   </body>

@@ -14,13 +14,14 @@ import { HomeViewComponent } from './home-view/home-view.component';
 
 const routes: Routes = [
   {path:'', pathMatch: 'full', redirectTo: "/Products" },
-  {path:"Products", component:ProductsComponent, ...canActivate(()=> redirectUnauthorizedTo(['/Login']))},
-  // {path:"Products", component:ProductsComponent},
+  //{path:"Products", component:ProductsComponent, ...canActivate(()=> redirectUnauthorizedTo(['/Login']))},
+  {path:"Products", component:ProductsComponent},
   {path:"OrderSummary", component:OrderSummaryComponent},
   {path:"Admin", component:AdminViewComponent},
   {path:"Register", component:RegisterComponent},
   {path:"Login", component:LoginComponent},
   {path:"Forgot", component:RecuperarPasswordComponent},
+  {path:"ChefView", component:ChefViewComponent},
   {path: "ProductDetail/:id", component:ProductViewComponent},
   {path:"ChefView", component:ChefViewComponent},
   {path: "Home-View", component:HomeViewComponent},

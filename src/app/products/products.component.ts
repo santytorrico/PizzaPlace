@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { FirestoreDatosService } from '../firestore-datos.service';
+import { Meta } from '@angular/platform-browser';
+import { __metadata } from 'tslib';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -71,9 +73,10 @@ export class ProductsComponent implements OnInit  {
   getDatosUsuario(uid:string){
     const path = 'Usuarios';
     const id = uid;
+    console.log('aqui uid ',id);
     this.datosUser.findObject(uid,path).then(data => this.item = data.data());
 
-    console.log('este es el resultado', this.datosUser.findObject(uid,path));
+    console.log('2...este es el resultado', this.item);
   }
   goHome(){
     this.router.navigate(['/Home-View']);

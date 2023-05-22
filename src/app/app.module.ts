@@ -25,6 +25,8 @@ import { ProductViewComponent } from './product-view/product-view.component';
 import { RouterModule } from '@angular/router';
 import { ChefViewComponent } from './chef-view/chef-view.component';
 import { HomeViewComponent } from './home-view/home-view.component';
+
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,10 +51,13 @@ import { HomeViewComponent } from './home-view/home-view.component';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
+    ToastrModule.forRoot(),
+    CarouselModule.forRoot()
+     // ToastrModule added
     // RouterModule.forRoot([
     //   { path: 'menuItems/:menuItemsName', component: ProductViewComponent},
     // ])
+    
   ],
   providers: [MenuService],
   bootstrap: [AppComponent]

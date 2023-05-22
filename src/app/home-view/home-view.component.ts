@@ -1,19 +1,24 @@
 import { Component } from '@angular/core';
 import {Location} from '@angular/common';
+import { MenuItem } from '../menu-item';
+import { MenuService } from '../menu.service';
 
 @Component({
   selector: 'app-home-view',
   templateUrl: './home-view.component.html',
   styleUrls: ['./home-view.component.scss']
 })
-export class HomeViewComponent {
+export class HomeViewComponent{
+  menuItems: MenuItem[] = [];
+  item: any;
+  Id1: string | undefined = '';
   whoAreWe: boolean = false;
   whatWeDo: boolean = false;
   mision: boolean = false;
   contactanos: boolean = false;
   vision: boolean = false;
   equipo: boolean = false;
-  constructor(private location: Location){
+  constructor(private location: Location, private menuService: MenuService){
 
   }
 
@@ -37,6 +42,12 @@ export class HomeViewComponent {
   }
   goBack(){
     this.location.back();
+  }
+  getMenu(id:string | undefined){
+    this.menuService.findMenuItem(id).then(menu=> this.item = menu.data());
+
+
+    console.log('este es el resultado',this.menuService.findMenuItem(id));
   }
 
 }

@@ -101,10 +101,35 @@ p {
   display: block; /* Set the image as a block element */
   margin: 0 auto;
   position: absolute;
-  top: 20%; /* Adjust the top position as needed */
+  top: 70%; /* Adjust the top position as needed */
+  left: 85%; /* Adjust the left position as needed */
+  z-index: 1;
+  width: 200px;
+  height: auto;
+}
+.pizza-semanal{
+  display: block; /* Set the image as a block element */
+  margin: 0 auto;
+  position: absolute;
+  top: 25%; /* Adjust the top position as needed */
   left: 35%; /* Adjust the left position as needed */
   z-index: 1;
+  width: 400px;
+  height: auto;
 }
+.titulo{
+  display: block; /* Set the image as a block element */
+  margin: 0 auto;
+  position: absolute;
+  top: 20%; /* Adjust the top position as needed */
+  left: 41%; /* Adjust the left position as needed */
+  z-index: 1;
+  width: 400px;
+  height: auto;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
 
 @keyframes fadeIn {
     0% {

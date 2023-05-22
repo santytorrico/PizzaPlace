@@ -21,5 +21,8 @@ export class ChefViewComponent {
   updateOrderStatus(id: string, newStatus: string) {
     this.orderService.updateOrderStatus(id, newStatus);
   }
+  storeReadyOrders() {
+    this.orderService.storeReadyOrders(this.orderItems)
+  }
   
 }

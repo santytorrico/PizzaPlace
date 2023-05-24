@@ -11,6 +11,9 @@ import { RecuperarPasswordComponent } from './recuperar-password/recuperar-passw
 import { ProductViewComponent } from './product-view/product-view.component';
 import { ChefViewComponent } from './chef-view/chef-view.component';
 import { HomeViewComponent } from './home-view/home-view.component';
+import { WhoWeAreComponent } from './who-we-are/who-we-are.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { EquipoComponent } from './equipo/equipo.component';
 
 const routes: Routes = [
   {path:'', pathMatch: 'full', redirectTo: "/Products" },
@@ -25,6 +28,9 @@ const routes: Routes = [
   {path: "ProductDetail/:id", component:ProductViewComponent},
   {path:"ChefView", component:ChefViewComponent},
   {path: "Home-View", component:HomeViewComponent},
+  {path: "Who-We-Are", component:WhoWeAreComponent},
+  {path: "Contacto", component:ContactoComponent},
+  {path: "Equipo", component: EquipoComponent}
 ];
 
 @NgModule({

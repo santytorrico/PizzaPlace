@@ -1,0 +1,94 @@
+.titulo {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    padding: 20px 0;
+    border-bottom: 2px solid #333;
+    margin-bottom: 20px;
+  }
+  
+
+.header {
+    position: absolute; /* Enable absolute positioning */
+    top: 90px; /* Adjust the top position as desired */
+    left: 400px; /* Adjust the left position as desired */
+    font-size: 48px; /* Adjust the font size */
+    font-weight: bold; /* Apply a bold font weight */
+    color: #fff; /* Change the text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
+    padding: 20px; /* Add some padding around the text */
+    background-color: #000; /* Add a background color */
+    border-radius: 10px; /* Apply a border radius for rounded corners */
+  }
+  .mision-section {
+    position: relative; /* Set the parent container as relative */
+  }
+  
+  .mision-content {
+    position: absolute; /* Set the content section as absolute */
+    top: 90px; /* Adjust the top position as needed */
+    left: 600px; /* Adjust the left position as needed */
+    background-color: #000;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+  }
+
+
+  .header-vision{
+    position: absolute; /* Enable absolute positioning */
+    bottom: 140px; /* Adjust the top position as desired */
+    left: 400px; /* Adjust the left position as desired */
+    font-size: 48px; /* Adjust the font size */
+    font-weight: bold; /* Apply a bold font weight */
+    color: #fff; /* Change the text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
+    padding: 20px; /* Add some padding around the text */
+    background-color: #000; /* Add a background color */
+    border-radius: 10px; /* Apply a border radius for rounded corners */
+  }
+  .vision-content{
+    position: absolute; /* Set the content section as absolute */
+    bottom: 70px; /* Adjust the top position as needed */
+    left: 600px; /* Adjust the left position as needed */
+    background-color: #000;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+  }
+
+  .logo {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 150px;
+    height: auto;
+  }
+
+  .goBack-container{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    margin-top: 20px;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+  

@@ -29,6 +29,9 @@ import { ChefViewComponent } from './chef-view/chef-view.component';
 import { HomeViewComponent } from './home-view/home-view.component';
 
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { WhoWeAreComponent } from './who-we-are/who-we-are.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { EquipoComponent } from './equipo/equipo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +47,9 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     ProductViewComponent,
     ChefViewComponent,
     HomeViewComponent,
+    WhoWeAreComponent,
+    ContactoComponent,
+    EquipoComponent,
   ],
   imports: [
     BrowserModule,

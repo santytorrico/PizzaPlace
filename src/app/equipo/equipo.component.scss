@@ -1,0 +1,62 @@
+.titulo {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    padding: 20px 0;
+    border-bottom: 2px solid #333;
+    margin-bottom: 20px;
+  }
+
+
+  .image-container {
+    position: relative; /* Create a positioning context for the container */
+  }
+  
+  .foto_grupal {
+    /* Adjust the position of the image within the container */
+    position: absolute;
+    top: 50; /* Adjust the top position as needed */
+    left: 0; /* Adjust the left position as needed */
+  }
+  
+  .image-caption {
+    /* Position the caption relative to the container */
+    position: absolute;
+    top: 100; /* Adjust the bottom position as needed */
+    left: 0; /* Adjust the left position as needed */
+    width: 10%; /* Set the width to match the container width */
+    background-color: rgba(0, 0, 0, 0.7); /* Example background color */
+    padding: 10px;
+    box-sizing: border-box;
+    color: #fff; /* Example text color */
+    text-align: center; /* Center the text */
+  }
+  
+
+
+  .logo {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 150px;
+    height: auto;
+  }
+
+  .goBack-container{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    margin-top: 20px;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }

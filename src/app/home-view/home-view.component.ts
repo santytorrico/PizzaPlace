@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Location} from '@angular/common';
 import { MenuItem } from '../menu-item';
 import { MenuService } from '../menu.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-view',
@@ -18,7 +19,7 @@ export class HomeViewComponent{
   contactanos: boolean = false;
   vision: boolean = false;
   equipo: boolean = false;
-  constructor(private location: Location, private menuService: MenuService){
+  constructor(private location: Location, private menuService: MenuService, private router: Router){
 
   }
 
@@ -49,5 +50,15 @@ export class HomeViewComponent{
 
     console.log('este es el resultado',this.menuService.findMenuItem(id));
   }
+  goWhoWeAre(){
+    this.router.navigate(['/Who-We-Are']);
+  }
+  goContacto(){
+    this.router.navigate(['/Contacto'])
+  }
+  goEquipo(){
+    this.router.navigate(['/Equipo'])
+  }
+
 
 }

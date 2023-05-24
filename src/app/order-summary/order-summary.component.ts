@@ -16,7 +16,9 @@ export class OrderSummaryComponent implements OnInit {
   itemCount: number = 0;
   email: string = '';
   confirm: boolean = false;
-  
+
+  orderSuccess: boolean = false;
+
   Usuario: string = '';
   telf: string='';
 
@@ -68,7 +70,10 @@ export class OrderSummaryComponent implements OnInit {
       this.getTotalPrice();
       this.confirm=false;
       form.resetForm();
+
       this.router.navigate(['/Products']);
+
+      this.orderSuccess = true;
     })
     // Additional logic or navigation can be added here after confirming the order
   }

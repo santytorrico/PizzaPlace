@@ -45,12 +45,14 @@ export class OrderService {
     return this.orderSubject;
   }
 
-  confirmOrder(email: string){
+  confirmOrder(email: string, Usuario: string, telf: string){
     const orderRef= collection(this.firestore, 'orders');
     const newOrder = {
       items: this.cartItems,
       totalPrice: Number(this.totalPrice),
       Email: email,
+      User: Usuario,
+      telf: telf,
       status: 'Pending'
     };
     addDoc(orderRef, newOrder);

@@ -42,9 +42,19 @@
             </table>
             <p>Total Price: $ {{ totalPrice }}</p>
             <p>Number of Items: {{ itemCount }}</p>
-            <button class="confirm-button" (click)="confirmOrder()">Confirm Order</button>
+            <button class="confirm-button" (click)="confirmPop()">Confirm Order</button>
 
             <button class="back-button" (click)="navigateToProducts()">Add more Items</button>
+            <div class="menu-edit-form" *ngIf="confirm">
+              <h2>LLena la informacion para tu pedido</h2>
+              <form  #form="ngForm" (ngSubmit)="confirmOrder(form)">
+                <label for="Usuario">Usuario:</label>
+                <input type="text" [(ngModel)]="Usuario" name="Usuario">
+                <label for="telf">Telf:</label>
+                <textarea [(ngModel)]="telf" name="telf"></textarea>
+                <button type="submit">Confirm</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

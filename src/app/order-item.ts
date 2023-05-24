@@ -5,4 +5,7 @@ export interface OrderItem {
     items: MenuItem[];
     totalPrice: number;
     status: string;
+    Email: string;
+    User: string;
+    telf: string;
   }

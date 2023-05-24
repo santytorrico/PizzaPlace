@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./product-view.component.scss']
 })
 export class ProductViewComponent implements OnInit{
-  menuItems: MenuItem | undefined;
+  menuItems: MenuItem[] = [];
   item: any;
   login: boolean = false;
   Id1: string | undefined = '';
@@ -61,4 +61,5 @@ navigateToOrderSummary(login: boolean): void {
     this.router.navigate(['/Login'])
   }
 }
+
 }

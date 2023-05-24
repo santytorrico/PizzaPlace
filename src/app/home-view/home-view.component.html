@@ -1,54 +1,46 @@
 <body>
-  <h1>Pizza Place</h1>
-  <div class="info-section">
-    <h2 class="quienesSomos" (click)="QuienesSomos()">Quienes somos</h2>
-    <p *ngIf="whoAreWe" >Somos un equipo apasionado y amantes de la pizza que se <br>
-      dedica a ofrecer las mejores y más deliciosas pizzas a nuestros <br>
-      clientes. Nos enorgullece crear pizzas únicas y sabrosas que <br>
-      satisfacen los paladares más exigentes.</p>
+  <h1 class="header">Pizza Place</h1>
+
+  
+<div class ="footer">
+
+    <div class="info-section">
+      <button class ="WhoWeAre" (click)="goWhoWeAre()" >Quienes Somos</button>
+    </div>
+
+    <div class="info-section">
+      <button class ="Contactanos" (click)="goContacto()" >Contactanos</button>
+    </div>
+
+    <div class="info-section">
+      <button class ="Equipo" (click)="goEquipo()" >Nuestro Equipo</button>
+    </div>
+
+</div>
+
+  <div class ="goBack-container">
+    <button class="goBack" (click)="goBack()">Order Now</button>
   </div>
-  <div class="info-section">
-    <h2 class ="queHacemos" (click)="QueHacemos()">Que es lo que hacemos</h2>
-    <p *ngIf="whatWeDo" >En Pizza Place, nos dedicamos a ofrecerte la mejor selección <br>
-      de pizzas deliciosas y auténticas. Trabajamos arduamente para <br>
-      crear combinaciones de sabores únicas y deliciosas, utilizando <br>
-      ingredientes frescos y de alta calidad.
-    </p>
-  </div>
-  <div class="info-section">
-    <h2 class ="contact" (click)="contactUs()">Contactanos</h2>
-    <p *ngIf="contactanos">(+591) 71734591 <br>
-       gadiel.ramos@ucb.edu.bo <br>
-       Av. America #1524
-    </p>
-  </div>
-  <div class ="info-section">
-    <h2 class ="mision" (click)="OurMission()">Mision</h2>
-    <p *ngIf="mision" >Nuestra misión es ofrecerte la mejor experiencia de pizza <br>
-      en línea, brindándote acceso a una amplia selección de <br>
-      deliciosas pizzas para que disfrutes en la comodidad de tu <br>
-      hogar. Nos enorgullece crear pizzas de calidad excepcional, <br>
-      utilizando ingredientes frescos y auténticos que resalten los <br>
-      sabores y aromas de cada creación. </p>
-  </div>
-  <div class="info-section">
-    <h2 class ="vision" (click)="OurVision()">Vision</h2>
-    <p *ngIf="vision" >Nuestra visión es convertirnos en el destino favorito para los <br>
-      amantes de la pizza que buscan calidad, sabor y una experiencia <br>
-      única. Nos apasiona perfeccionar cada detalle de nuestras pizzas, <br>
-      desde la selección cuidadosa de los ingredientes frescos hasta la <br>
-       preparación y el horneado perfecto.</p>
-  </div>
-  <div class="info-section">
-    <h2 class ="team" (click)="OurTeam()">Nuestro equipo</h2>
-    <p *ngIf="equipo" >
-      CEO: Santiago Torrico<br>
-      CFO: Gadiel Ramos<br>
-      COO: Leonardo Orsi<br>
-    </p>
-  </div>
-  <div>
-    <button class="goBack" (click)="goBack()">Return</button>
-  </div>
-  <img class = "logo" src="https://firebasestorage.googleapis.com/v0/b/pizzaplacebolivia.appspot.com/o/logo.png?alt=media&token=550f84e1-c45f-40c4-9004-cc9fb2807647" alt="">
+  
+  <carousel>
+    <slide>
+      <img class ="picture" src="https://firebasestorage.googleapis.com/v0/b/pizzaplacebolivia.appspot.com/o/pizza%20de%20la%20semana.webp?alt=media&token=51462a7a-acf5-49fa-bf60-c25ccf0f11ac" alt="">
+    <div class ="carousel-caption">
+    </div>
+    </slide>
+    <slide>
+      <img class ="picture" src="https://firebasestorage.googleapis.com/v0/b/pizzaplacebolivia.appspot.com/o/pizza%20de%20la%20semana%204.jpg?alt=media&token=564998d3-53c8-4f7f-af10-818eddfbf457" alt="">
+      <div class="carousel-caption">
+      </div>
+    </slide>
+    <slide>
+      <img class ="picture" src="https://firebasestorage.googleapis.com/v0/b/pizzaplacebolivia.appspot.com/o/pizza%20de%20la%20semana%203.jpg?alt=media&token=af9713be-b92d-4ad1-a346-42a4e4f598ed" alt ="">
+      <div class ="carousel-caption">
+      </div> 
+    </slide>
+  </carousel>
+  
+  <img class = "logo" src="https://firebasestorage.googleapis.com/v0/b/pizzaplacebolivia.appspot.com/o/logo_mejorado.png?alt=media&token=ff56bcbe-41b9-4b6f-9c52-66e92b24e7ac" alt="">
+
+
 </body>  

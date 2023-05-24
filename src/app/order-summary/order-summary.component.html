@@ -46,12 +46,12 @@
 
             <button class="back-button" (click)="navigateToProducts()">Add more Items</button>
             <div class="menu-edit-form" *ngIf="confirm">
-              <h2>LLena la informacion para tu pedido</h2>
+              <h2>Who's picking up the order?</h2>
               <form  #form="ngForm" (ngSubmit)="confirmOrder(form)">
-                <label for="Usuario">Usuario:</label>
+                <label for="Usuario">Name/Nick:</label>
                 <input type="text" [(ngModel)]="Usuario" name="Usuario">
-                <label for="telf">Telf:</label>
-                <textarea [(ngModel)]="telf" name="telf"></textarea>
+                <label for="telf">Phone:</label>
+                <input type="number" [(ngModel)]="telf" name="telf" pattern="[0-9]*" inputmode="numeric">
                 <button type="submit">Confirm</button>
               </form>
             </div>

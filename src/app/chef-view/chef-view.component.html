@@ -2,7 +2,9 @@
   <div class="col-md-4">
     <h3>Pending Orders</h3>
     <ng-container *ngFor="let order of orderItems">
-      <div *ngIf="order.status === 'Pending'">
+      <div class="order-item" *ngIf="order.status === 'Pending'">
+        <p>Who's picking up:{{order.User}}</p>
+        <p>Phone Number: {{order.telf}}</p>
         <p>Order #{{ order.id }}</p>
         <p>Status: {{ order.status }}</p>
         <ul>
@@ -16,7 +18,9 @@
   <div class="col-md-4">
     <h3>In Progress Orders</h3>
     <ng-container *ngFor="let order of orderItems">
-      <div *ngIf="order.status === 'In Progress'">
+      <div class="order-item" *ngIf="order.status === 'In Progress'">
+        <p>Who's picking up:{{order.User}}</p>
+        <p>Phone Number: {{order.telf}}</p>
         <p>Order #{{ order.id }}</p>
         <p>Status: {{ order.status }}</p>
         <ul>
@@ -30,7 +34,9 @@
   <div class="col-md-4">
     <h3>Ready Orders</h3>
     <ng-container *ngFor="let order of orderItems">
-      <div *ngIf="order.status === 'Ready'">
+      <div class="order-item" *ngIf="order.status === 'Ready'">
+        <p>Who's picking up:{{order.User}}</p>
+        <p>Phone Number: {{order.telf}}</p>
         <p>Order #{{ order.id }}</p>
         <p>Status: {{ order.status }}</p>
         <ul>

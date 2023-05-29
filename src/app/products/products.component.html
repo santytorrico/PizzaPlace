@@ -12,8 +12,8 @@
       <button class ="GoHome" (click)="goHome()" >Home</button>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <button class="nav-link" (click)="onClickLogout()" *ngIf="login == true">Sign Out</button>
-          <button class="nav-link" (click)="onClickLogin()" *ngIf="login == false">Sign In</button>
+          <button class="sign-in-out" (click)="onClickLogout()" *ngIf="login == true">Sign Out</button>
+          <button class="sign-in-out" (click)="onClickLogin()" *ngIf="login == false">Sign In</button>
         </li>
       </ul>
     </nav>

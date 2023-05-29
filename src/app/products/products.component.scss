@@ -1,10 +1,14 @@
+header{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 .navbar {
-  background-color: #333;
+  background-color: #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  position: sticky;
 }
 
 .navbar-brand {
@@ -25,16 +29,6 @@
   margin-left: 10px;
 }
 
-.nav-link {
-  background-color: #fff;
-  border: none;
-  border-radius: 5px;
-  color: #333;
-  cursor: pointer;
-  padding: 10px 20px;
-  text-decoration: none;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
 
 .GoHome {
   background-color: #fff;
@@ -42,26 +36,29 @@
   border-radius: 5px;
   color: #333;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  font-size: large;
-  gap: 8px;
+  font-size: medium;
   padding: 8px 16px;
   text-align: center;
   color: #000;
-  display: flex; /* Set the container to use flexbox */
-  justify-content: center; /* Center the button horizontally */
+  margin-left: auto;
 }
 .GoHome:hover{
   background-color: #333;
   color: #fff;
 }
 
-.nav-link:hover {
+.sign-in-out {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.sign-in-out:hover {
   background-color: #333;
   color: #fff;
-}
-
-.nav-link:focus {
-  outline: none;
 }
 
 .menu-container {
@@ -173,17 +170,4 @@
   50% {
     transform: scale(1.4);
   }
-}
-.navbar-brand {
-  color: #fff;
-  font-size: 24px;
-  text-decoration: none;
-  font-family: cursive;
-}
- .navbar {
-  background-color: #0a0505;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
 }

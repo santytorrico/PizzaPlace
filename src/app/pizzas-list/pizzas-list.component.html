@@ -9,7 +9,7 @@
         <button class="btn btn-delete" (click)="onClickDelete(menuItem)">Delete</button>
       </div>
     </div>
-    <div class="menu-edit-form" *ngIf="selectedMenuItem">
+    <div class="menu-edit-form" *ngIf="selectedMenuItem" >
       <h2>Edit {{selectedMenuItem.name}}</h2>
       <form (ngSubmit)="onSubmit()">
         <label for="name">Name:</label>

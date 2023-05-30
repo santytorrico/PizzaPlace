@@ -3,6 +3,10 @@ header{
   top: 0;
   z-index: 100;
 }
+ body {
+  margin: 0;
+  padding: 0;
+}
 .navbar {
   background-color: #000;
   display: flex;
@@ -46,7 +50,22 @@ header{
   background-color: #333;
   color: #fff;
 }
-
+.Cart{
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  font-size: medium;
+  padding: 8px 16px;
+  text-align: center;
+  color: #000;
+  margin-left: 10px;
+}
+.Cart:hover{
+  background-color: #333;
+  color: #fff;
+}
 .sign-in-out {
   background-color: #fff;
   border: none;

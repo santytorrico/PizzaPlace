@@ -18,7 +18,8 @@
 }
 
 .foto_grupal {
-  width: 300px; /* Adjust the width as desired */
+  width: 600px;
+  height: 400px;
 }
 
 .image-caption {
@@ -41,7 +42,7 @@
   height: auto;
 }
 
-.goBack-container {
+.goBack-container .goBack {
   position: fixed;
   bottom: 20px;
   right: 20px;

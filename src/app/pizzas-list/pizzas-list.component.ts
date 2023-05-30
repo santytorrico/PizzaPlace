@@ -25,6 +25,11 @@ export class PizzasListComponent implements OnInit{
 
   onClickEdit(menuItem: MenuItem){
     this.selectedMenuItem = menuItem;
+    
+    const menuEditForm = document.getElementById('menu-edit-form');
+    if (menuEditForm) {
+      menuEditForm.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
   }
 
   async onSubmit(){

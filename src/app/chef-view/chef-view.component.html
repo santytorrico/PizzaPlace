@@ -3,8 +3,8 @@
     <h3>Pending Orders</h3>
     <ng-container *ngFor="let order of orderItems">
       <div class="order-item" *ngIf="order.status === 'Pending'">
-        <p>Who's picking up:{{order.User}}</p>
-        <p>Phone Number: {{order.telf}}</p>
+        <h2>Who's picking up: {{order.User}}</h2>
+        <h2>Phone Number: {{order.telf}}</h2>
         <p>Order #{{ order.id }}</p>
         <p>Status: {{ order.status }}</p>
         <ul>
@@ -19,8 +19,8 @@
     <h3>In Progress Orders</h3>
     <ng-container *ngFor="let order of orderItems">
       <div class="order-item" *ngIf="order.status === 'In Progress'">
-        <p>Who's picking up:{{order.User}}</p>
-        <p>Phone Number: {{order.telf}}</p>
+        <h2>Who's picking up: {{order.User}}</h2>
+        <h2>Phone Number: {{order.telf}}</h2>
         <p>Order #{{ order.id }}</p>
         <p>Status: {{ order.status }}</p>
         <ul>
@@ -35,8 +35,8 @@
     <h3>Ready Orders</h3>
     <ng-container *ngFor="let order of orderItems">
       <div class="order-item" *ngIf="order.status === 'Ready'">
-        <p>Who's picking up:{{order.User}}</p>
-        <p>Phone Number: {{order.telf}}</p>
+        <h2>Who's picking up: {{order.User}}</h2>
+        <h2>Phone Number: {{order.telf}}</h2>
         <p>Order #{{ order.id }}</p>
         <p>Status: {{ order.status }}</p>
         <ul>

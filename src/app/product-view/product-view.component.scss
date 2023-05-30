@@ -12,8 +12,8 @@ body {
 }
 
 .image-container {
-  width: 300px; /* Adjust the width of the image container */
-  height: 500px; /* Adjust the height of the image container */
+  width: 500px; 
+  height: 650px;
 }
 
 .horizontal-image {
@@ -27,7 +27,6 @@ body {
 
 .product-details {
   text-align: center;
-  margin-top: 20px; /* Adjust the margin as needed */
 }
 
 .addToCart {
@@ -55,6 +54,9 @@ body {
 
   &:hover {
     color: #fff;
+  }
+  i {
+    margin-right: 5px;
   }
   
 }

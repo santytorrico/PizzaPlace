@@ -1,46 +1,39 @@
+
 <body>
-  <h1 class="header">Pizza Place</h1>
-
+  <header>
+    <h1 class="header">Pizza Place</h1>
+    <button class="order-now" (click)="goBack()">Order Now</button>
+  </header>
   
-<div class ="footer">
-
-    <div class="info-section">
-      <button class ="WhoWeAre" (click)="goWhoWeAre()" >Quienes Somos</button>
+  <div class="carousel-container">
+        <carousel>
+          <slide>
+            <img class ="picture" src="https://firebasestorage.googleapis.com/v0/b/pizzaplacebolivia.appspot.com/o/PICKLEWALLPAPER_DESKTOP.jpg?alt=media&token=ddb0684a-9bd4-402d-82dc-8630e441edd6&_gl=1*1lkmg24*_ga*MTMwNzUxMTQ0LjE2ODExNDIzMjQ.*_ga_CW55HF8NVT*MTY4NTQ2MTMwOC4zNS4xLjE2ODU0NjM4NzEuMC4wLjA." alt="">
+          <div class ="carousel-caption">
+          </div>
+          </slide>
+          <slide>
+            <img class ="picture" src="https://firebasestorage.googleapis.com/v0/b/pizzaplacebolivia.appspot.com/o/americanhoneyLands.png?alt=media&token=723afeb7-375a-4ff1-b6bb-0918c9fef588&_gl=1*1cqtrg3*_ga*MTMwNzUxMTQ0LjE2ODExNDIzMjQ.*_ga_CW55HF8NVT*MTY4NTQ2MTMwOC4zNS4xLjE2ODU0NjU5NzYuMC4wLjA." alt="">
+            <div class="carousel-caption">
+            </div>
+          </slide>
+          <slide>
+            <img class ="picture" src="https://firebasestorage.googleapis.com/v0/b/pizzaplacebolivia.appspot.com/o/buffyLands.png?alt=media&token=dc62803e-dc09-4897-86ee-93dbf2678de3&_gl=1*14e82xd*_ga*MTMwNzUxMTQ0LjE2ODExNDIzMjQ.*_ga_CW55HF8NVT*MTY4NTQ2MTMwOC4zNS4xLjE2ODU0NjYxODkuMC4wLjA." alt ="">
+            <div class ="carousel-caption">
+            </div> 
+          </slide>
+        </carousel>
     </div>
-
-    <div class="info-section">
-      <button class ="Contactanos" (click)="goContacto()" >Contactanos</button>
-    </div>
-
-    <div class="info-section">
-      <button class ="Equipo" (click)="goEquipo()" >Nuestro Equipo</button>
-    </div>
-
-</div>
-
-  <div class ="goBack-container">
-    <button class="goBack" (click)="goBack()">Order Now</button>
-  </div>
   
-  <carousel>
-    <slide>
-      <img class ="picture" src="https://firebasestorage.googleapis.com/v0/b/pizzaplacebolivia.appspot.com/o/PICKLEWALLPAPER_DESKTOP.webp?alt=media&token=26f7e0c8-d2b2-448f-9da5-db0ad6b383eb" alt="">
-    <div class ="carousel-caption">
-    </div>
-    </slide>
-    <slide>
-      <img class ="picture" src="https://firebasestorage.googleapis.com/v0/b/pizzaplacebolivia.appspot.com/o/pizza%20de%20la%20semana%205.png?alt=media&token=b371152d-5515-41b1-95b1-9670bf58bd2d" alt="">
-      <div class="carousel-caption">
+    <footer>
+      <div class="info-section">
+        <button class="footer-button" (click)="goWhoWeAre()">Quienes Somos</button>
       </div>
-    </slide>
-    <slide>
-      <img class ="picture" src="https://firebasestorage.googleapis.com/v0/b/pizzaplacebolivia.appspot.com/o/pizza%20de%20la%20semana%206.png?alt=media&token=236d4a7d-bade-4be0-8e7f-8ea343a29050" alt ="">
-      <div class ="carousel-caption">
-      </div> 
-    </slide>
-  </carousel>
-  
-  <img class = "logo" src="https://firebasestorage.googleapis.com/v0/b/pizzaplacebolivia.appspot.com/o/logo_mejorado.png?alt=media&token=ff56bcbe-41b9-4b6f-9c52-66e92b24e7ac" alt="">
-
-
-</body>  
+      <div class="info-section">
+        <button class="footer-button" (click)="goContacto()">Contactanos</button>
+      </div>
+      <div class="info-section">
+        <button class="footer-button" (click)="goEquipo()">Nuestro Equipo</button>
+      </div>
+    </footer>
+</body>
